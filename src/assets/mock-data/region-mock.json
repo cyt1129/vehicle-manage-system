@@ -1,0 +1,28 @@
+[
+  {
+    "regionName": "葡萄一区",
+    "subRegions": [
+      {
+        "subregionName": "观光1区",
+        "entityIds": "1,2,3,4"
+      },
+      {
+        "subregionName": "观光2区",
+        "entityIds": "6,8,9,6"
+      }
+    ]
+  },
+  {
+    "regionName": "葡萄二区",
+    "subRegions": [
+      {
+        "subregionName": "观光3区",
+        "entityIds": "1,2,3,4"
+      },
+      {
+        "subregionName": "观光4区",
+        "entityIds": "6,8,9,6"
+      }
+    ]
+  }
+]

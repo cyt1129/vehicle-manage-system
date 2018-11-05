@@ -1,0 +1,61 @@
+<div class="light-control" *ngIf="threeStatCtrlList.length>0 || twoStatCtrlList.length >0">
+  <div class="light-control-title">
+    <span class="light-title-violet"></span>
+    <p>实时控制</p>
+  </div>
+  <hr>
+  <div id="3Stat" *ngIf="threeStatCtrlList.length > 0">
+    <div class="light-checkbox">
+      <span (click)="on3StatBatchControlClk()">批量控制</span>
+      <div class="batch-botton" *ngIf="is3StatBatCtrlBtnShow">
+        <div class="batch-foreward" (click)="onThreeStatBatchControl('batch_on')"></div>
+        <div class="batch-pause" (click)="onThreeStatBatchControl('batch_stop')"></div>
+        <div class="batch-inversion" (click)="onThreeStatBatchControl('batch_off')"></div>
+      </div>
+      <div class="batch-check-all">
+        <div class="checkbox">
+          <input #threeStatChk class="lightCheckbox01" id="lightCheckbox01" type="checkbox"
+                 (click)="on3StatBatchChk(threeStatChk)">
+          <label for="lightCheckbox01">全选</label>
+        </div>
+      </div>
+    </div>
+    <div class="light-clear"></div>
+    <div class="light-control-content">
+      <ul>
+        <app-three-state *ngFor="let ctrlInfo of threeStatCtrlList"
+                         [threeStatController]="ctrlInfo.controller"
+                         [ampSensors]="ctrlInfo.ampereSensor"
+                         (threeStatChkEvent)="chkEventHandler(threeStatChk, 3)"
+        ></app-three-state>
+      </ul>
+    </div>
+  </div>
+
+  <div id="2Stat" *ngIf="twoStatCtrlList.length > 0">
+    <div class="light-checkbox">
+      <span (click)="on2StatBatchControlClk()">批量控制</span>
+      <div class="batch-botton" *ngIf="is2StatBatCtrlBtnShow">
+        <div class="batch-open" (click)="onTwoStatBatchControl('batch_on')"></div>
+        <div class="batch-stop" (click)="onTwoStatBatchControl('batch_off')"></div>
+      </div>
+      <div class="batch-check-all">
+        <div class="checkbox">
+          <input #twoStatChk class="lightCheckbox02" id="lightCheckbox02" type="checkbox"
+                 (click)="on2StatBatchChk(twoStatChk)" >
+          <label for="lightCheckbox02">全选</label>
+        </div>
+      </div>
+    </div>
+    <div class="light-clear"></div>
+    <div class="light-control-content">
+      <ul>
+        <app-two-state *ngFor="let ctrlInfo of twoStatCtrlList"
+                       [twoStatController]="ctrlInfo.controller"
+                       [ampSensors]="ctrlInfo.ampereSensor"
+                       (twoStatCkfEvent)="chkEventHandler(twoStatChk, 2)"
+        ></app-two-state>
+      </ul>
+    </div>
+  </div>
+</div>

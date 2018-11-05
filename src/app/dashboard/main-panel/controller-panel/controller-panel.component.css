@@ -1,0 +1,169 @@
+
+
+.light-control .light-control-title {
+  margin: 8px;
+  color: #e5e5e5;
+}
+
+.light-control .light-control-title .light-title-violet {
+  display: inline-block;
+  width: 6px;
+  height: 26px;
+  background-color: #b969c7;
+}
+
+.light-control .light-control-title p {
+  display: inline-block;
+  margin: 0 0 0 6px;
+  line-height: 26px;
+  font-size: 16px;
+  vertical-align: top;
+}
+
+.light-control>hr {
+  margin: -12px 5px 0 8px;
+  height: 1px;
+  border:none;
+  border-top:1px solid #999;
+}
+
+.light-checkbox span {
+  cursor: pointer;
+}
+
+.light-control .light-checkbox {
+  height: 42px;
+  line-height: 42px;
+  font-size: 14px;
+  color: #e5e5e5;
+}
+
+.light-control .light-checkbox .batch-check-all {
+  margin-left: 10px;
+}
+
+.light-control .light-checkbox .batch-check-all {
+  margin-left: 10px;
+}
+
+.checkbox {
+  position: relative;
+  display: inline-block;
+  padding: 10px 0;
+  line-height: 18px;
+}
+
+.checkbox .lightCheckbox01 + label:before,
+.checkbox .lightCheckbox01:not(:checked) + label:before {
+  background: #fff url("/assets/img/checkbox01.png");
+}
+
+.checkbox .lightCheckbox02 + label:before,
+.checkbox .lightCheckbox02:not(:checked) + label:before {
+  background: #fff url("/assets/img/checkbox02.png");
+}
+
+.checkbox input[type="checkbox"]:checked + label:before,
+.checkbox input[type="checkbox"]:not(:checked) + label:before {
+  content: " ";
+  height: 18px;
+  left: 0;
+  position: absolute;
+  width: 18px;
+}
+
+.checkbox input[type="checkbox"]:not(:checked):focus + label:before,
+.checkbox input[type="checkbox"]:not(:checked) + label:hover:before {
+  background-position: -20px 0;
+}
+
+.checkbox input[type="checkbox"]:checked + label:before {
+  background-position: -40px 0;
+}
+
+.checkbox input[type="checkbox"][disabled]:not(:checked) + label:before {
+  background-position: -60px 0;
+}
+
+.checkbox input[type="checkbox"][disabled]:checked + label:before {
+  background-position: -80px 0;
+}
+
+.checkbox label {
+  margin-left: 5px;
+}
+
+.light-control .light-checkbox .batch-botton {
+  float:right;
+  height: 42px;
+}
+
+.light-control .light-checkbox>span {
+  float: right;
+  margin: 0 5px;
+}
+
+.light-control .light-checkbox .batch-botton .batch-foreward {
+  display: inline-block;
+  width: 50px;
+  height: 42px;
+  background: url("/assets/img/batchforeward.png") center center no-repeat;
+  cursor: pointer;
+}
+
+.light-control .light-checkbox .batch-botton .batch-open {
+  display: inline-block;
+  width: 50px;
+  height: 42px;
+  background: url("/assets/img/batchopen.png") center center no-repeat;
+  cursor: pointer;
+}
+
+.light-control .light-checkbox .batch-botton .batch-pause {
+  display: inline-block;
+  width: 50px;
+  height: 42px;
+  background: url("/assets/img/batchpause.png") center center no-repeat;
+  cursor: pointer;
+}
+
+.light-control .light-checkbox .batch-botton .batch-stop {
+  display: inline-block;
+  width: 50px;
+  height: 42px;
+  background: url("/assets/img/batchstop.png") center center no-repeat;
+  cursor: pointer;
+}
+
+.light-control .light-checkbox .batch-botton .batch-inversion {
+  display: inline-block;
+  width: 50px;
+  height: 42px;
+  background: url("/assets/img/batchinversion.png") center center no-repeat;
+  cursor: pointer;
+}
+
+.light-control .light-checkbox .batch-botton .batch-foreward:hover {
+  background: url("/assets/img/batchforewardhover.png") center center no-repeat;
+}
+
+.light-control .light-checkbox .batch-botton .batch-open:hover {
+  background: url("/assets/img/batchopenhover.png") center center no-repeat;
+}
+
+.light-control .light-checkbox .batch-botton .batch-pause:hover {
+  background: url("/assets/img/batchpausehover.png") center center no-repeat;
+}
+
+.light-control .light-checkbox .batch-botton .batch-stop:hover {
+  background: url("/assets/img/batchstophover.png") center center no-repeat;
+}
+
+.light-control .light-checkbox .batch-botton .batch-inversion:hover {
+  display: inline-block;
+  width: 50px;
+  height: 42px;
+  background: url("/assets/img/batchinversionhover.png") center center no-repeat;
+}
+
+

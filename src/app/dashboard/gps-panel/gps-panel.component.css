@@ -1,0 +1,60 @@
+baidu-map{
+    width: 890px;
+    height: 500px;
+    display: block;
+}
+
+.light-gps-table {
+  width: 890px;
+  height:100px;
+  margin:auto;
+  background-color: #e5e5e5;
+  display:none;
+}
+table{
+  width:800px;
+  margin:auto;
+  text-align: center;
+  border: #2c3b47 1px solid;
+  background-color: #e5e5e5;
+}
+
+.light-gps-title {
+    margin-bottom: 5px;
+    padding: 8px 8px 8px 0;
+    color: #e5e5e5;
+    background-color: #2c3b47;
+  }
+  
+  .light-gps-title .light-title-brown {
+    display: inline-block;
+    width: 6px;
+    height: 26px;
+    background-color: #785646;
+  }
+  
+  .light-gps-title p {
+    display: inline-block;
+    margin: 0 0 0 6px;
+    line-height: 26px;
+    font-size: 16px;
+    vertical-align: top;
+  }
+
+  .light-gps-control button {
+    display:inline-block;
+  }
+  
+  .light-gps-content {
+    height: 520px;
+    width:890px;
+    background-color: #2c3b47;
+  }
+
+  hr{
+    margin: -12px 5px 0 8px;
+    height: 1px;
+    border:none;
+    border-top:1px solid #999;
+  }
+  

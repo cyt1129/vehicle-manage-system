@@ -1,0 +1,42 @@
+[
+  {
+    "time":  new Date(),
+    "level": "WARN",
+    "message": "dsadsadasd"
+  },
+  {
+    "time": "2017-01-24",
+    "level": "WARN",
+    "message": "dsadsadasd"
+  },
+  {
+    "time": "2017-01-24",
+    "level": "WARN",
+    "message": "dsadsadasd"
+  },
+  {
+    "time": "2017-01-24",
+    "level": "WARN",
+    "message": "dsadsadasd"
+  },
+  {
+    "time": "2017-01-24",
+    "level": "WARN",
+    "message": "dsadsadasd"
+  },
+  {
+    "time": "2017-01-24",
+    "level": "WARN",
+    "message": "dsadsadasd"
+  },
+  {
+    "time": "2017-01-24",
+    "level": "WARN",
+    "message": "dsadsadasd"
+  },
+  {
+    "time": "2017-01-24",
+    "level": "WARN",
+    "message": "dsadsadasd"
+  }
+]

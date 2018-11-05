@@ -1,0 +1,21 @@
+{
+  "id": {
+    "id": "854eeb80-9fce-11e6-8080-808080808080"
+  },
+  "createdTime": 1477962003000,
+  "country": null,
+  "state": null,
+  "city": null,
+  "address": null,
+  "address2": null,
+  "zip": null,
+  "phone": null,
+  "email": null,
+  "title": "这里是企业名",
+  "tenantId": {
+    "id": "cba44a80-9fce-11e6-8080-808080808080"
+  },
+  "additionalInfo": {
+    "description": "what if i put the company name here"
+  }
+}

@@ -1,0 +1,22 @@
+<li>
+  <div class="control-name-purple">{{twoStatController.name}}
+    <input #input class="check" type="checkbox" checked="{{isChecked?'checked':''}}" (click)="onChkboxClk(input)" /></div>
+  <div class="control-panel">
+    <div *ngIf="latestGatherTime">
+      <span class="control-time-orange" >{{latestGatherTime|timePipe}}</span>
+      <span class="control-message-yellow">{{message}}</span>
+    </div>
+    <div *ngIf="!latestGatherTime">
+      <span class="control-time-orange" ></span>
+      <span class="control-message-yellow"></span>
+    </div>
+    <div class="control-light" [ngClass]="light"></div>
+
+    <span class="control-button-open" (click)="onCtrlBtnClk('on')"></span><span class="control-button-stop" (click)="onCtrlBtnClk('stop')"></span>
+    <span class="control-glitter-green02" [ngClass]="onGlitterLight"></span><span class="control-glitter-gray02" [ngClass]="offGlitterLight"></span>
+    <div>
+      <span class="control-info-purple" title="当前电流：300A" *ngIf="curAmp">当前：{{curAmp}}{{curAmpUnit}}</span>
+      <span class="control-info-purple" title="最大电流：300A" *ngIf="maxAmp">最大：{{maxAmp}}{{maxAmpUnit}}</span>
+    </div>
+  </div>
+</li>

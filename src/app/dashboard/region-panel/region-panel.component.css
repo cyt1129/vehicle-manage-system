@@ -1,0 +1,38 @@
+.light-region-ul{
+  width: 300px;
+  margin: 0 auto;
+}
+
+.light-region-ul>li{
+  margin: 5px 0;
+  padding: 10px 0;
+  text-indent:20px;
+  background: #fff153;
+  cursor: pointer;
+}
+
+.light-region-ul>li>ul{
+  display: none;
+}
+
+.light-region-ul>li {
+  background: url("/assets/img/down.png") no-repeat bottom #fff153;
+  background-size:300px 13px ;
+}
+
+.light-region-ul>li>ul>li{
+  padding: 5px 20px;
+  background: #aba94f;
+  border-top: 1px solid #2c3b47;
+}
+
+.light-region-ul>li:hover,
+.light-region-ul>li.on {
+  background: url("/assets/img/up.png") no-repeat bottom #fff153;
+  background-size: 300px 11px;
+}
+
+.light-region-ul>li:hover>ul,
+.light-region-ul>li.on>ul {
+  display: block;
+}

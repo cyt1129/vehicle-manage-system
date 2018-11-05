@@ -1,0 +1,140 @@
+.login {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "Microsoft YaHei UI";
+}
+
+.login input {
+  font-size: 13px;
+}
+
+.login input::placeholder {
+  font-size: 13px;
+  padding: 0px 1px;
+}
+
+.header {
+  width: 95%;
+  margin-left: 5%;
+  height: 80px;
+  line-height: 80px;
+}
+.header h2 {
+  font-weight: 500;
+  letter-spacing: 2px;
+  margin: 0;
+  padding: 0;
+  font-size: 32px;
+}
+.middle {
+  width: 100%;
+  background: url("/assets/images/tree.png") no-repeat 20% -70% #2d3b48;
+  height: 410px;
+}
+.loginbox {
+  background: url("/assets/images/login.png") no-repeat;
+  width: 272px;
+  height: 270px;
+  margin-top: 70px;
+  float: right;
+  margin-right: 20%;
+}
+.username {
+  border:0;
+  background: none;
+  margin-top:80px ;
+  height: 25px;
+  margin-left: 70px;
+  text-indent: 10px;
+  width: 169px;
+}
+.password {
+  border:0;
+  background: none;
+  margin-top:30px ;
+  height: 25px;
+  margin-left: 70px;
+  text-indent: 10px;
+  width: 169px;
+}
+.loginbtn {
+  background: url("/assets/images/loginbtn.png") no-repeat;
+  width: 212px;
+  height: 32px;
+  border: 0;
+  margin-top: 50px;
+  margin-left: 30px;
+  cursor: pointer;
+}
+.intro {
+  height: 110px;
+  background: #e5e5e5;
+  width: 100%;
+}
+.intro p {
+  margin: 0;
+
+}
+.intro ul {
+  list-style: none;
+  margin: 0 auto;
+  padding-top: 38px;
+  width: 90%;
+
+}
+.intro ul li {
+  float: left;
+  width: 25%;
+  text-align: center;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  height: 60px;
+  line-height: 60px;
+  font-size: 14px;
+  width: 100%;
+}
+
+.icon {
+  width: 34px;
+  height: 34px;
+  background: #f39800;
+  display:inline-block;
+  margin-right: 10px;
+}
+.icon2 {
+  width: 34px;
+  height: 34px;
+  background: #28b6f6;
+  display:inline-block;
+  margin-right: 10px;
+}
+.icon3 {
+  width: 34px;
+  height: 34px;
+  background: #fff154;
+  display:inline-block;
+  margin-right: 10px;
+}
+.icon3 {
+  width: 34px;
+  height: 34px;
+  background: #fff154;
+  display:inline-block;
+  margin-right: 10px;
+}
+.icon4 {
+  width: 34px;
+  height: 34px;
+  background: #8f82ba;
+  display:inline-block;
+  margin-right: 10px;
+}
+.word {
+  display: inline-block;
+  font-size: 14px;
+}

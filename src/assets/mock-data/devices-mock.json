@@ -1,0 +1,38 @@
+{
+  "data": [
+    {
+      "id": {
+        "id": "7196de30-5712-11e7-bcd4-df254d8c8582"
+      },
+      "createdTime": 1498112238483,
+      "tenantId": {
+        "id": "cba44a80-9fce-11e6-8080-808080808080"
+      },
+      "customerId": {
+        "id": "854eeb80-9fce-11e6-8080-808080808080"
+      },
+      "name": "device1",
+      "additionalInfo": {
+        "description": "test device1"
+      }
+    },
+    {
+      "id": {
+        "id": "f37c8940-5bdb-11e7-9680-df254d8c8582"
+      },
+      "createdTime": 1498638589908,
+      "tenantId": {
+        "id": "cba44a80-9fce-11e6-8080-808080808080"
+      },
+      "customerId": {
+        "id": "854eeb80-9fce-11e6-8080-808080808080"
+      },
+      "name": "device2",
+      "additionalInfo": {
+        "description": "test device2"
+      }
+    }
+  ],
+  "nextPageLink": null,
+  "hasNext": false
+}

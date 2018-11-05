@@ -1,0 +1,29 @@
+<div class="light-alert-title">
+  <span class="light-title-red"></span>
+  <p>系统报警</p>
+</div>
+<div class="light-alert-content">
+  <div style="background-color:white">
+  <nz-table #nzTable [nzAjaxData]="dataSet" [nzPageSize]="50" [nzScroll]="{ y: 240 }" >
+    <ng-template #nzFixedHeader>
+    <thead nz-thead>
+      <tr>
+        <th nz-th nzWidth="150px">Time</th>
+        <th nz-th nzWidth="80px">Status</th>
+        <th nz-th nzWidth="75px">Type</th>
+        <th nz-th nzWidth="75px">Device</th>
+      </tr>
+    </thead>
+  </ng-template>
+    <tbody nz-tbody>
+       <tr *ngFor="let data of nzTable.data">
+        
+        <td nz-td>{{data.time|timePipe}}</td>
+        <td nz-td>{{data.status}}</td>
+        <td nz-td>{{data.type}}</td>
+        <td nz-td>{{data.device}}</td>
+      </tr>
+    </tbody>
+  </nz-table>
+  </div>
+</div>

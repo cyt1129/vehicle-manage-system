@@ -1,0 +1,24 @@
+<div class="light-entity"> 
+  <ul>
+    <li (click)="changePanelType(0)" [ngClass]="isActive(0)"><span>实时数据</span></li>
+    <li (click)="changePanelType(1)" [ngClass]="isActive(1)"><span>运输监控</span></li>
+  </ul>
+</div>
+<!--
+<div class="light-entity">
+  <ul>
+    <!<li><div></div><span>首页</span></li>
+    <li *ngFor="let relation of relationList"
+        [ngClass]="isActive(relation.title)"
+        (click)="activePanel(relation.subregion)"
+    >
+      <div (click)="closePanel(relation.title)"></div><span>{{relation.title}}</span>
+    </li>
+    <!-<li class="on"><div></div><span title="观光1区">观光1区</span></li>
+    <!-<li><div></div><span title="观光2区">观光2区</span></li>
+  </ul>
+</div>
+-->
+<div class="light-left-content">
+  <div #mainPanel></div>
+</div>

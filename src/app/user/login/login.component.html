@@ -1,0 +1,49 @@
+<div class="login">
+    <nz-spin  [nzTip]="'正在加載中...'"[nzSize]="'large'" [nzSpinning]="_isSpinning">
+  <div class="header">
+    <h2>智慧物联网平台</h2>
+  </div>
+  <div class="middle"> 
+    <div class="loginbox">
+      <input [(ngModel)]="username" type="text" class="username" placeholder="邮箱">
+      <input [(ngModel)]="password" type="password" class="password" placeholder="密码">
+      <input (click)="onSubmit()" type="button" class="loginbtn">
+    </div>
+  </div>
+  <div class="intro">
+    <ul>
+      <li>
+        <span class="icon"></span>
+        <span class="word">
+                    <p>一键开停</p>
+                    <p>快速响应</p>
+                </span>
+      </li>
+      <li>
+        <span class="icon2"></span>
+        <span class="word">
+                    <p>实时监测</p>
+                    <p>远程控制</p>
+                </span>
+      </li>
+      <li>
+        <span class="icon3"></span>
+        <span class="word">
+                    <p>实时告警</p>
+                    <p>一键处理</p>
+                </span>
+      </li>
+      <li>
+        <span class="icon4"></span>
+        <span class="word">
+                    <p>精准操控</p>
+                    <p>进步功率</p>
+                </span>
+      </li>
+    </ul>
+  </div>
+</nz-spin> 
+<div class="footer">
+  Copyright © 2018 杭州极码科技有限公司
+</div>
+</div>

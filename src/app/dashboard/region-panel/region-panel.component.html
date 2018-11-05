@@ -1,0 +1,9 @@
+<ul class="light-region-ul">
+  <li *ngFor="let region of regionList" >{{region.regionName}}
+    <ul>
+      <li *ngFor="let subregion of region.subRegions" (click)="regionClick(subregion)">
+        {{subregion.subregionName}}
+      </li>
+    </ul>
+  </li>
+</ul>

@@ -1,0 +1,223 @@
+li {
+  display: inline-block;
+  margin: 3px 0 0 8px;
+  width: 208px;
+  border: 1px solid #999;
+}
+
+.control-name-blue {
+  height: 60px;
+  line-height: 60px;
+  font-size: 16px;
+  text-align: center;
+  background: #4dd1e1 url("/assets/img/controlthree.png") 5% 20% no-repeat;
+
+  position: relative;
+}
+
+.control-panel {
+  padding: 0 10px;
+  height: 190px;
+  background: #193850 ;
+}
+
+.control-panel .control-time-orange {
+  line-height: 32px;
+  color: #c47438;
+}
+
+.control-panel .control-message-yellow {
+  margin-left: 10px;
+  line-height: 32px;
+  color: #f4e82f;
+}
+
+.control-panel .control-light {
+  margin: 0 auto;
+  padding: 10px 0;
+  width: 33px;
+  height: 33px;
+}
+
+.control-panel .control-light.stop {
+  background: url(/assets/img/lightstop.png) center center no-repeat;
+}
+
+.control-panel .control-light.open {
+  background: url(/assets/img/lightopen.png) center center no-repeat;
+}
+
+.control-panel .control-light.close {
+  background: url(/assets/img/lightclose.png) center center no-repeat;
+}
+
+.control-panel .control-button-foreward {
+  display: inline-block;
+  margin-top: 5px;
+  width: 63px;
+  height: 26px;
+  background: url(/assets/img/foreward.png) no-repeat;
+  cursor: pointer;
+}
+
+.control-panel .control-button-pause {
+  display: inline-block;
+  margin-top: 5px;
+  width: 61px;
+  height: 26px;
+  background: url(/assets/img/pause.png) no-repeat;
+  cursor: pointer;
+}
+
+.control-panel .control-button-inversion {
+  display: inline-block;
+  margin-top: 5px;
+  width: 61px;
+  height: 26px;
+  background: url(/assets/img/inversion.png) no-repeat;
+  cursor: pointer;
+}
+
+.control-panel .control-button-open {
+  display: inline-block;
+  margin: 5px 0 0 30px;
+  width: 63px;
+  height: 26px;
+  background: url(/assets/img/open.png) no-repeat;
+  cursor: pointer;
+}
+
+.control-panel .control-button-stop {
+  display: inline-block;
+  margin-top: 5px;
+  width: 63px;
+  height: 26px;
+  background: url(/assets/img/stop.png) no-repeat;
+  cursor: pointer;
+}
+
+.control-panel .control-button-foreward:hover {
+  background: url(/assets/img/forewardhover.png) no-repeat;
+}
+
+.control-panel .control-button-pause:hover {
+  background: url(/assets/img/pausehover.png) no-repeat;
+}
+
+.control-panel .control-button-inversion:hover {
+  background: url(/assets/img/inversionhover.png) no-repeat;
+}
+
+.control-panel .control-button-open:hover {
+  background: url(/assets/img/openhover.png) no-repeat;
+}
+
+.control-panel .control-button-stop:hover {
+  background: url(/assets/img/stophover.png) no-repeat;
+}
+
+.control-panel .control-glitter-green01 {
+  display: inline-block;
+  margin: 5px 0 10px 2px;
+  width: 58px;
+  height: 8px;
+  background: url(/assets/img/green.png) no-repeat;
+}
+
+.control-panel .control-glitter-green01.glitter {
+  background: url(/assets/img/green.gif) no-repeat;
+}
+
+.control-panel .control-glitter-green02 {
+  display: inline-block;
+  margin: 5px 0 10px 32px;
+  width: 58px;
+  height: 8px;
+  background: url(/assets/img/green.png) no-repeat;
+}
+
+.control-panel .control-glitter-green02.glitter {
+  background: url(/assets/img/green.gif) no-repeat;
+}
+
+.control-panel .control-glitter-gray01 {
+  display: inline-block;
+  margin: 5px 0 10px 4px;
+  width: 58px;
+  height: 8px;
+  background: url(/assets/img/gray.png) no-repeat;
+}
+
+.control-panel .control-glitter-gray01.glitter {
+  background: url(/assets/img/gray.gif) no-repeat;
+}
+
+.control-panel .control-glitter-gray02 {
+  display: inline-block;
+  margin: 5px 0 10px 4px;
+  width: 58px;
+  height: 8px;
+  background: url(/assets/img/gray.png) no-repeat;
+}
+
+.control-panel .control-glitter-gray02.glitter {
+  background: url(/assets/img/gray.gif) no-repeat;
+}
+
+.control-panel .control-glitter-red {
+  display: inline-block;
+  margin: 5px 0 10px 4px;
+  width: 58px;
+  height: 8px;
+  background: url(/assets/img/red.png) no-repeat;
+}
+
+.control-panel .control-glitter-red.glitter {
+  background: url(/assets/img/red.gif) no-repeat;
+}
+
+.control-panel .control-info-blue {
+  display: block;
+  float: left;
+  margin: 2px 0 0 2px;
+  width: 90px;
+  line-height: 16px;
+  color: #5ed1cd;
+  font-size: 10px;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+
+.control-panel .control-info-purple {
+  display: block;
+  float: left;
+  margin: 2px 0 0 2px;
+  width: 90px;
+  line-height: 16px;
+  color: #ca8aff;
+  font-size: 10px;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+
+.check {
+  -webkit-appearance: none;
+  background: #fff url(/assets/img/checkbox.png);
+  height: 16px;
+  vertical-align: middle;
+  width: 16px;
+  background-size:16px;
+
+  z-index: 10;
+  position: absolute;
+  right: 5px;
+  top: 5px;
+}
+
+.check:checked {
+
+  background: #fff url(/assets/img/checked.png);
+  background-size:16px ;
+}

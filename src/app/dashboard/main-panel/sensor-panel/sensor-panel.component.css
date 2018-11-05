@@ -1,0 +1,31 @@
+
+.light-data .light-data-title {
+  margin: 8px;
+  color: #e5e5e5;
+}
+
+.light-data .light-data-title .light-title-blue {
+  display: inline-block;
+  width: 6px;
+  height: 26px;
+  background-color: #2198f2;
+}
+
+.light-data .light-data-title p {
+  display: inline-block;
+  margin: 0 0 0 6px;
+  line-height: 26px;
+  font-size: 16px;
+  vertical-align: top;
+}
+
+.light-data > hr {
+  margin: -12px 5px 0 8px;
+  height: 1px;
+  border:none;
+  border-top:1px solid #999;
+}
+
+.light-data .light-data-content{
+  margin-top: 6px;
+}

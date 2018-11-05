@@ -1,0 +1,20 @@
+{
+  "id": {
+    "id": "62243c00-9fce-11e6-8080-808080808080"
+  },
+  "createdTime": 1477961944000,
+  "tenantId": {
+    "id": "cba44a80-9fce-11e6-8080-808080808080"
+  },
+  "customerId": {
+    "id": "854eeb80-9fce-11e6-8080-808080808080"
+  },
+  "email": "customerC@thingsboard.org",
+  "authority": "CUSTOMER_USER",
+  "firstName": "二狗",
+  "lastName": "王",
+  "additionalInfo": {
+    "defaultDashboardId": null,
+    "description": "customerC登录账号的描述"
+  }
+}

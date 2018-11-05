@@ -1,0 +1,15 @@
+<div class="light-header">
+  <div class="light-header-admin">
+    <ul>
+     <!-- <li (click)="loginCfg()"> 设备管理 | </li>-->
+      <li><span>{{user.lastName}}{{user.firstName}}，欢迎登陆易农生产平台</span></li>
+      <li><img src="assets/img/lightuser.png"> 个人中心 | </li>
+      <li (click)="logoutButtonClickHandler()"><img src="assets/img/lightout.png"> 退出系统 </li>
+    </ul>
+  </div>
+  
+  <div class="light-header-title">
+    <span>{{user.companyName}}</span>
+  </div>
+
+</div>

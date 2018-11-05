@@ -1,0 +1,5 @@
+<div [ngStyle]="{'display': isShow?'block':'none'}">
+  <app-sensor-panel [sensorList]="normalSensors"></app-sensor-panel>
+  <div class="light-split"></div>
+  <app-controller-panel [controllerList]="controllers" [asList]="ampereSensors"></app-controller-panel>
+</div>

@@ -1,0 +1,17 @@
+<li>
+  <div class="control-name-blue">{{threeStatController.name}}
+    <input #input class="check" type="checkbox" [checked]="(isChecked?'checked':'')" (click)="onChkBoxClk(input)"/></div>
+  <div class="control-panel">
+    <span class="control-time-orange" *ngIf="latestGatherTime">{{latestGatherTime|timePipe}}</span>
+    <span class="control-message-yellow">{{message}}</span>
+    <div class="control-light" [ngClass]="light"></div>
+    <span class="control-button-foreward" (click)="onCtrlBtnClick('on')"></span><span class="control-button-pause" (click)="onCtrlBtnClick('stop')"></span><span class="control-button-inversion" (click)="onCtrlBtnClick('off')"></span>
+    <span class="control-glitter-green01" [ngClass]="openGlitterLight"></span><span class="control-glitter-red" [ngClass]="closeGlitterLight"></span><span class="control-glitter-gray01" [ngClass]="stopGlitterLight"></span>
+    <div>
+      <span class="control-info-blue" title="正转当前电流" *ngIf="openCurAmp">当前：{{openCurAmp}}{{openCurAmpUnit}}</span>
+      <span class="control-info-blue" title="反转当前电流" *ngIf="closeCurAmp">当前：{{closeCurAmp}}{{closeCurAmpUnit}}</span>
+      <span class="control-info-blue" title="正转最大电流" *ngIf="openMaxAmp">最大：{{openMaxAmp}}{{openMaxAmpUnit}}</span>
+      <span class="control-info-blue" title="反转最大电流" *ngIf="closeMaxAmp">最大：{{closeMaxAmp}}{{closeMaxAmpUnit}}</span>
+    </div>
+  </div>
+</li>

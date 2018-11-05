@@ -1,0 +1,38 @@
+.light-header {
+  width: 1280px;
+  height: 90px;
+  margin: 0 auto;
+}
+
+
+
+.light-header-title > img{
+  margin-top: 27px;
+}
+
+.light-header-title > span{
+  font-size: 32px;
+  line-height: 90px;
+  color: #81a348;
+  overflow:hidden;
+}
+
+.light-header-admin {
+  float:right;
+  border:1px solid white;
+  width:400px;
+  color: #e5e5e5;
+  margin-top: 10px;
+}
+
+.light-header-admin li{
+  display: inline-block;
+  width: 90px;
+  height:38px;
+  line-height: 38px;
+  cursor: pointer;
+}
+
+.light-header-admin li>img{
+  vertical-align: middle;
+}

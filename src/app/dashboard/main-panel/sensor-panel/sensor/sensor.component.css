@@ -1,0 +1,94 @@
+li{
+  position: relative;
+  display: inline-block;
+  margin-left: 8px;
+  width: 210px;
+  height: 72px;
+  background-color: #e5e5e5;
+}
+
+li .data-type-sun{
+  position: absolute;
+  width: 80px;
+  height: 72px;
+  background: #d4e256;
+}
+
+li .data-type-sun img{
+  padding:10px 0 5px 27px;
+}
+
+li .data-type-sun p{
+  text-align: center;
+}
+
+li .data-type-temperature{
+  position: absolute;
+  width: 80px;
+  height: 72px;
+  background: #28b7f6;
+}
+
+li .data-type-temperature img{
+  padding:10px 0 5px 35px;
+}
+
+li .data-type-temperature p{
+  text-align: center;
+}
+
+li .data-type-shidu{
+  position: absolute;
+  width: 80px;
+  height: 72px;
+  background: #4db6ac;
+}
+
+li .data-type-shidu img{
+  padding:10px 0 5px 35px;
+}
+
+li .data-type-shidu p{
+  text-align: center;
+}
+
+li .data-type-co2{
+  position: absolute;
+  width: 80px;
+  height: 72px;
+  background: #81c784;
+}
+
+li .data-type-co2 img{
+  padding:10px 0 5px 35px;
+}
+
+li .data-type-co2 p{
+  text-align: center;
+}
+
+li .data-value{
+  position: absolute;
+  margin-left: 80px;
+  width: 130px;
+  height: 72px;
+  text-align: center;
+  color: #666;
+}
+
+li .data-value .data-big-gray{
+  margin: 15px 5px 0 0;
+  font-size: 18px;
+}
+
+li .data-value .data-small-gray{
+  margin-right: 5px;
+  font-size: 12px;
+}
+
+.spining {
+  width: 700px;
+  height:500px;
+  text-align: left;
+  z-index: 100;
+}

@@ -1,0 +1,26 @@
+.light-history-title {
+  margin-bottom: 5px;
+  padding: 8px 8px 8px 0;
+  color: #e5e5e5;
+  background-color: #2c3b47;
+}
+
+.light-history-title .light-title-brown {
+  display: inline-block;
+  width: 6px;
+  height: 26px;
+  background-color: #785646;
+}
+
+.light-history-title p {
+  display: inline-block;
+  margin: 0 0 0 6px;
+  line-height: 26px;
+  font-size: 16px;
+  vertical-align: top;
+}
+
+.light-history-content {
+  height: 240px;
+  background-color: #2c3b47;
+}
