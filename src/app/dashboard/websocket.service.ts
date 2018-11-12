@@ -80,6 +80,41 @@ export class WebsocketService {
     this.webSocketSubject.next(JSON.stringify(cmd));
   }
 
+  //直接接受确切起始时间和结束时间的历史轨迹查询
+  getHistoryDataByDeviceIdWithStartAndEnd(entityId:string,sensorKey:string,startTime:string,endTime:string){
+    //startTime和endTime要改成unix时间格式
+    let stT = Date.parse(startTime);
+    let edT = Date.parse(endTime);
+
+    let cmd = new CmdWrapper();
+    cmd.tsSubCmds = [];
+    const timeSeriesCmd = new TimeseriesCmd();
+    timeSeriesCmd.entityId = entityId;
+    timeSeriesCmd.timeWindow = edT - stT;
+
+    let day = new Date();
+    let hour = day.getHours();
+    let minutes = day.getMinutes();
+    let seconds = day.getSeconds();
+    let dayTime = hour*3600000 + minutes*60000 + seconds*1000;
+
+    timeSeriesCmd.startTs = stT + dayTime - 8*3600000;
+
+    timeSeriesCmd.limit = 50000;
+    timeSeriesCmd.entityType="DEVICE";
+
+    timeSeriesCmd.interval = 1000*5;
+    // timeSeriesCmd.agg = "AVG";
+    timeSeriesCmd.keys = sensorKey;
+    timeSeriesCmd.cmdId = this._cmdId ++;
+    cmd.tsSubCmds.push(timeSeriesCmd);
+
+    console.log(cmd);
+    console.log(JSON.stringify(cmd));
+    this.webSocketSubject.next(JSON.stringify(cmd));
+
+  }
+
   private handleTimeSeriesMsgSubscription(): void{//处理valSubject
     this.webSocketSubject.filter(msg => !isNullOrUndefined(this._t_val[msg.subscriptionId]))//是否有subscrpId这项和是否在设备列表中
       .subscribe(msg => {

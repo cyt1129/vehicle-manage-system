@@ -56,10 +56,9 @@ export class GpsPanelComponent implements OnInit {
   public historyData:Array<Array<any>>;
   public historyMarkers:Marker[]=[]; //历史数据markers用于表格显示
   public points:Array<Point>=[];//历史数据point用于轨迹绘制
-  public test:any;
-  data = [];
-  startDate:any;//起始时间
-  endDate:any;//结束时间
+
+  private startDate = '';//起始时间
+  private endDate = '';//结束时间
 
 
   constructor(
@@ -229,14 +228,21 @@ export class GpsPanelComponent implements OnInit {
   timeOption:timeOption = new timeOption();
 
   showHistory(gps):void{
+
+    if(this.startDate.length == 0 || this.endDate.length == 0){
+      console.log("未选择时间")
+      alert('请选择起始时间与终止时间');
+      return;
+    }
     console.log(this.startDate);
-    
     console.log(this.endDate);
-    this.timeOption._timeIn = 7;//测试默认显示三日数据！！测试用！！
+    this.points = [];
+    this.historyMarkers = [];
+    //this.timeOption._timeIn = 365;//测试默认显示三日数据！！测试用！！
     this.isReal = false;//隐藏实时位置的marker
     console.log("获取gps历史信息")
     //发送该gps信息获取历史信息的ws
-    this._websocketService.getHistoryDataByDeviceId(gps.parentInfo.entityId,gps.key,this.timeOption);
+    this._websocketService.getHistoryDataByDeviceIdWithStartAndEnd(gps.parentInfo.entityId,gps.key,this.startDate,this.endDate);
   }
 
   showReal():void{
@@ -244,21 +250,6 @@ export class GpsPanelComponent implements OnInit {
     this.isHistory = false;
   }
 
-  p(markers:Marker[]):Promise<any>{
-    return new Promise(function(resolve){ 
-        resolve(markers);
-    });
-  }
-
-  final(m1:Marker[]){
-    var promise = new Promise(function(resolve){
-      resolve(m1);
-    });
-    promise.then(function(value){
-      console.log(value);//怎么把value的值取出来
-    });
-    //console.log(m2);
-  }
 }
    
 
