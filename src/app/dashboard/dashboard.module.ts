@@ -21,10 +21,12 @@ import { BaiduMapModule } from "angular2-baidu-map";
 import { GpsService } from "./gps-panel/gps.service";
 import { GpsCoordService } from "./gps-panel/gps-coord.service"; 
 import { RegionService } from "./region-panel/service/region.service";
+import { FormsModule } from "@angular/forms";
 
 @NgModule({
   imports: [
     CommonModule,
+    FormsModule,
     MainPanelModule,
     RouterModule,
     EchartsNg2Module,

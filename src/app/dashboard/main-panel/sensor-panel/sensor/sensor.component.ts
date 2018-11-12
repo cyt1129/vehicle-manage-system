@@ -18,9 +18,10 @@ export class SensorComponent implements OnInit {
  //弹出框
  //历史曲线时间选择
  //加载中
- _isSpin = true;
+ _isSpin = false;
 timeoption1 = 7;
  public timeOption:timeOption = new timeOption();
+ 
  print(num:number){
    this.timeoption1 = num;
    this.timeOption._timeIn = this.timeoption1;
@@ -106,7 +107,7 @@ timeoption1 = 7;
         this._websocketService.valSubject
           .subscribe(msg => {
             if(msg.name == `!${sensor.key}@${sensor.parentInfo.entityId}`){
-              // subscribe for historical data.
+              // subscribe for historical data
               this._data = msg.data;
               this._isSpin = false;
               this.chartOption = this.getOpt(this._data, sensor.name);

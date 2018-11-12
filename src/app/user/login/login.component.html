@@ -5,8 +5,11 @@
   </div>
   <div class="middle"> 
     <div class="loginbox">
-      <input [(ngModel)]="username" type="text" class="username" placeholder="邮箱">
-      <input [(ngModel)]="password" type="password" class="password" placeholder="密码">
+      <input [(ngModel)]="username" type="text" class="username" placeholder="邮箱" (focus)="cw()">
+      <input [(ngModel)]="password" type="password" class="password" placeholder="密码" (focus)="cw()">
+      <div class="loginfailed" >
+        <div class="warning" *ngIf="showWarning">账号或密码不正确，请重新输入</div>
+      </div>
       <input (click)="onSubmit()" type="button" class="loginbtn">
     </div>
   </div>

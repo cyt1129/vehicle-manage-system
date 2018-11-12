@@ -1,18 +1,24 @@
 <li>
+  <!--左侧传感器名称与图片-->
   <div [ngClass]="sensorType.classStr">
     <img [src]="sensorType.imgUrl">
     <p>{{sensorAttr.name}}</p>
   </div>
+  <!--右侧实时与历史数据大框-->
   <div class="data-value" *ngIf="value; else elseP">
-    <p class="data-big-gray">
-      {{value|transform:sensorAttr.config.trans}}&nbsp;{{sensorAttr.config.unit}}
-    </p>
-    <p class="data-small-gray">
-      {{time | timePipe}}
-    </p>
-    <p>
-      <i class="anticon anticon-line-chart" (click)="showModal()"></i>
-      <nz-modal [nzVisible]="isVisible" [nzTitle]="modalTitle" [nzWidth]="'800px'"
+    <!--实时数据div-->
+    <div class="data-value-real" (click)="showModal()">
+      <p class="data-big-gray">
+        {{value|transform:sensorAttr.config.trans}}&nbsp;{{sensorAttr.config.unit}}
+      </p>
+      <p class="data-small-gray">
+        {{time | timePipe}}
+      </p>
+    </div>
+    <!--历史数据大框-->
+    <div>
+      <!--<i class="anticon anticon-line-chart" (click)="showModal()"></i-->
+      <nz-modal [nzVisible]="isVisible" [nzTitle]="modalTitle" [nzWidth]="'1000px'"
       [nzContent]="modalContent" (nzOnCancel)="handleCancel($event)" (nzOnOk)="handleOk($event)">
         <ng-template #modalTitle>
           历史曲线
@@ -36,22 +42,25 @@
           <!-- <div [chart] = "stock"></div> -->
          <div class="spining">
           <nz-spin [nzTip] = "'正在努力加载数据...'" [nzSpinning] = "_isSpin">  
-            <echarts-ng2 [option]="chartOption" [style]="{'width': '700px', 'height': '500px', 'display': 'inline-block'}"> 
+            <echarts-ng2 [option]="chartOption" [style]="{'width': '950px', 'height': '500px', 'display': 'inline-block'}"> 
             </echarts-ng2>
           </nz-spin>
          </div>
         </ng-template>
       </nz-modal>
-    </p>
+    </div>
+
   </div>
 
   <ng-template #elseP>
     <div class="data-value">
-      <p class="data-big-gray">
-        暂无数据
-      </p>
-      <p>
-          <i class="anticon anticon-line-chart" (click)="showModal()"></i>
+      <div class="data-value-real">
+        <p class="data-big-gray">
+          暂无数据
+        </p>
+      </div>
+      <div>
+          <!--<i class="anticon anticon-line-chart" (click)="showModal()"></i>-->
           <nz-modal [nzVisible]="isVisible" [nzTitle]="modalTitle" [nzWidth]="'800px'"
           [nzContent]="modalContent" (nzOnCancel)="handleCancel($event)" (nzOnOk)="handleOk($event)">
             <ng-template #modalTitle>
@@ -62,7 +71,7 @@
               <echarts-ng2 [option]="chartOption" [style]="{'width': '700px', 'height': '500px', 'display': 'inline-block'}"></echarts-ng2>
             </ng-template>
           </nz-modal>
-        </p>
+      </div>
     </div>
   </ng-template>
 </li>

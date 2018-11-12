@@ -1,4 +1,5 @@
 import { Component,OnInit,ChangeDetectionStrategy,ChangeDetectorRef,OnDestroy} from  "@angular/core";
+import { FormsModule } from "@angular/forms";
 import {
   MapOptions, 
   Point, 
@@ -57,6 +58,8 @@ export class GpsPanelComponent implements OnInit {
   public points:Array<Point>=[];//历史数据point用于轨迹绘制
   public test:any;
   data = [];
+  startDate:any;//起始时间
+  endDate:any;//结束时间
 
 
   constructor(
@@ -116,6 +119,9 @@ export class GpsPanelComponent implements OnInit {
   }
 
   ngOnInit(){
+
+    //this.startDate = new Date().getDate
+
     this._sensors = this.subregion.sensors;
     console.log(this._sensors);
     this._sensors.map(sensor => {
@@ -219,9 +225,13 @@ export class GpsPanelComponent implements OnInit {
       marker.getPosition()
     )
   }
+
   timeOption:timeOption = new timeOption();
 
   showHistory(gps):void{
+    console.log(this.startDate);
+    
+    console.log(this.endDate);
     this.timeOption._timeIn = 7;//测试默认显示三日数据！！测试用！！
     this.isReal = false;//隐藏实时位置的marker
     console.log("获取gps历史信息")
@@ -238,15 +248,6 @@ export class GpsPanelComponent implements OnInit {
     return new Promise(function(resolve){ 
         resolve(markers);
     });
-  }
-  /*
-  promise.then(function(value){
-    //console.log(this.points);
-    return value;
-  });
-  */
-  itMakesMeCrazy(point:any,callback):void{
-     
   }
 
   final(m1:Marker[]){

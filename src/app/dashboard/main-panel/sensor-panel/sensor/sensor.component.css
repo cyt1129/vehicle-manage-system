@@ -3,15 +3,22 @@ li{
   display: inline-block;
   margin-left: 8px;
   width: 210px;
-  height: 72px;
-  background-color: #e5e5e5;
+  height: 80px;
+  background-color: #e4e4e4;
+  cursor: pointer;
+  margin-top: 8px;
+}
+li:hover{
+  box-shadow: 3px 3px 5px rgb(3, 1, 15);
+  color:black;
+
 }
 
 li .data-type-sun{
   position: absolute;
   width: 80px;
-  height: 72px;
-  background: #d4e256;
+  height: 80px;
+  background: #ddcc33;
 }
 
 li .data-type-sun img{
@@ -25,7 +32,7 @@ li .data-type-sun p{
 li .data-type-temperature{
   position: absolute;
   width: 80px;
-  height: 72px;
+  height: 80px;
   background: #28b7f6;
 }
 
@@ -40,8 +47,12 @@ li .data-type-temperature p{
 li .data-type-shidu{
   position: absolute;
   width: 80px;
-  height: 72px;
+  height: 80px;
   background: #4db6ac;
+}
+
+li .data-type-shidu:hover{
+  color:black;
 }
 
 li .data-type-shidu img{
@@ -55,7 +66,7 @@ li .data-type-shidu p{
 li .data-type-co2{
   position: absolute;
   width: 80px;
-  height: 72px;
+  height: 80px;
   background: #81c784;
 }
 
@@ -71,19 +82,35 @@ li .data-value{
   position: absolute;
   margin-left: 80px;
   width: 130px;
-  height: 72px;
+  height: 80px;
   text-align: center;
   color: #666;
 }
 
+li .data-value-real{
+  width:130px;
+  height:80px;
+  margin:0;
+}
+
+li .data-value:hover{
+  color:black;
+  background-color: white;
+}
+
 li .data-value .data-big-gray{
-  margin: 15px 5px 0 0;
+  /*margin: 15px 5px 0 0;*/
   font-size: 18px;
+  height:50px;
+
+  line-height: 50px;
 }
 
 li .data-value .data-small-gray{
   margin-right: 5px;
-  font-size: 12px;
+  font-size: 8px;
+  height: 30px;
+  line-height: 30px;
 }
 
 .spining {
@@ -91,4 +118,8 @@ li .data-value .data-small-gray{
   height:500px;
   text-align: left;
   z-index: 100;
+}
+
+i{
+  border:1px solid red;
 }

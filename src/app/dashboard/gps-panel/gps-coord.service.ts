@@ -71,7 +71,7 @@ export class GpsCoordService {
   knots_To_km(data:string):string{
     let kn = parseFloat(data);
     let km = kn*1.825
-    return km + "km/h";
+    return km.toFixed(1) + "km/h";
   }
 
   findDirection(data:string):string{

@@ -41,9 +41,67 @@ table{
     vertical-align: top;
   }
 
-  .light-gps-control button {
-    display:inline-block;
+  .gps-button{
+    /*border:1px solid red;*/
+    height: 40px;
+    font-size:14px;
   }
+  .gps-button-real{
+    display: block;
+    float:left;
+    border-radius: 5px;
+    height:30px;
+    width:100px;
+    line-height:30px;
+    background-color: #e5e5e5;
+    margin:5px 2px;
+    text-align: center;
+  }
+  .gps-button-real:hover{
+    background-color: white;
+    cursor: pointer;
+    color: black;
+  }
+  .gps-button-history{
+    display: block;
+    float:left;
+    border-radius:5px;
+    height:30px;
+    width:580px;
+     /*line-height:30px;*/
+    background-color: #e5e5e5;
+    margin:5px 2px;
+ 
+  
+   }
+ .gps-button-history span{
+   display:block;
+   float:left;
+   margin: 6px 20px;
+   /*border:solid black 1px;*/
+ }
+ 
+ .time-choice {
+   display:block;
+   float:left;
+   font-size:12px;
+   
+   margin:4px
+ }
+ 
+ .time-choice div{
+   display:block;
+   float:left;
+   margin: 0 2px
+ }
+ 
+ .time-choice button{
+   border-radius:10px;
+   width:30px;
+   margin:0 auto;
+   cursor: pointer;
+ }
+ 
   
   .light-gps-content {
     height: 520px;

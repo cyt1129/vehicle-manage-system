@@ -31,8 +31,29 @@
   </div>
 
   <div class="light-gps-control">
-    <button (click)="showReal()"><span>实时位置</span></button>
-    <button (click)="showHistory(gps)"><span>历史轨迹</span></button>
+    <div class="gps-button">
+      <div class="gps-button-real" (click)="showReal()">
+          <span>实时位置</span>
+      </div>
+      <div class="gps-button-history" >
+          <span>历史轨迹</span>
+          <div class="time-choice">
+            <div class="startdate">开始日期
+              <input type="date" [(ngModel)]="startDate" value="startDate"/>
+            </div>
+            <div class="enddate">结束日期
+              <input type="date" [(ngModel)]="endDate" value="endDate"/>
+            </div>
+            <button (click)="showHistory(gps)">查询</button>
+          </div>
+      </div> 
+      <!--
+      <div class="time-choice">
+          <nz-datepicker style="width: 40%;" (ngModelChange)="_startDate=$event;_startValueChange()" [ngModel]="_startDate" [nzDisabledDate]="_disabledStartDate" [nzShowTime]="true" [nzFormat]="'YYYY-MM-DD HH:mm:ss'" [nzPlaceHolder]="'Start date'"></nz-datepicker>
+          <nz-datepicker style="width: 40%;" (ngModelChange)="_endDate=$event;_endValueChange()" [ngModel]="_endDate" [nzDisabledDate]="_disabledEndDate" [nzShowTime]="_endTime" [nzFormat]="'YYYY-MM-DD HH:mm:ss'" [nzPlaceHolder]="'End date'"></nz-datepicker>
+      </div> -->
+    </div>
+
     <div [ngStyle]="{'display':isReal?'block':'none'}">
       <nz-table #nzTable>
         

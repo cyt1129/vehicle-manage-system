@@ -86,6 +86,7 @@ export class WebsocketService {
         console.log(msg);
         if(msg.errorCode == 0){
           let data = msg.data;
+          console.log(data);//实验
           for(let tmp in data){
             if(data[tmp].length > 1){//如果data数超过1就是历史数据，历史数据的message前面有个！
               // history data.
