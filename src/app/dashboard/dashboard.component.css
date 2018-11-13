@@ -50,15 +50,16 @@
 }
 
 .light-region {
-  margin-left: 5%;
+  /*margin-left: 5%;*/
   padding: 20px 20px;
   color:#333;
   font-size: 18px;
   background-color: #2c3b47;
+  width: 95%;
 }
 
 .light-alert {
-  margin-left: 5%;
+  /*margin-left: 5%;*/
   width: 95%;
 }
 
