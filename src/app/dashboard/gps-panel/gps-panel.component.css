@@ -97,14 +97,14 @@ table{
  
  .time-choice button{
    border-radius:10px;
-   width:30px;
-   margin:0 auto;
+   width:50px;
+   height: 22px;
    cursor: pointer;
  }
  
   
   .light-gps-content {
-    height: 520px;
+    /*height: 520px;*/
     width:890px;
     background-color: #2c3b47;
   }
