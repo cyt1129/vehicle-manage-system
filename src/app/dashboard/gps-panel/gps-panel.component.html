@@ -1,14 +1,13 @@
 <div [ngStyle]="{'display': isShow?'block':'none'}"> 
   <div class="light-gps-title" >
     <span class="light-title-brown"></span>
-    <p>实时定位</p>
+    <p>{{subregionName}}</p>
   </div>
   <hr>
   <div class="light-gps-content">
     <div style="height:500px;width:900px">
       <baidu-map [options]="opts">
-    <!--图标-->
-    <!--<marker *ngFor="let marker of markers" [point]="marker.point" [options]="marker.options"></marker>-->
+    <!--marker-->
         <div *ngIf="isReal">
           <marker *ngFor="let marker of markers" [point]="marker.point" (clicked)="showWindow($event,marker)"></marker>
         </div>
@@ -47,11 +46,6 @@
             <button (click)="showHistory(gps)">查询</button>
           </div>
       </div> 
-      <!--
-      <div class="time-choice">
-          <nz-datepicker style="width: 40%;" (ngModelChange)="_startDate=$event;_startValueChange()" [ngModel]="_startDate" [nzDisabledDate]="_disabledStartDate" [nzShowTime]="true" [nzFormat]="'YYYY-MM-DD HH:mm:ss'" [nzPlaceHolder]="'Start date'"></nz-datepicker>
-          <nz-datepicker style="width: 40%;" (ngModelChange)="_endDate=$event;_endValueChange()" [ngModel]="_endDate" [nzDisabledDate]="_disabledEndDate" [nzShowTime]="_endTime" [nzFormat]="'YYYY-MM-DD HH:mm:ss'" [nzPlaceHolder]="'End date'"></nz-datepicker>
-      </div> -->
     </div>
 
     <div [ngStyle]="{'display':isReal?'block':'none'}">

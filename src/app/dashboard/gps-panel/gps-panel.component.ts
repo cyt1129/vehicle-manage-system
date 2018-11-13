@@ -37,28 +37,26 @@ export class GpsPanelComponent implements OnInit {
   mapTypeOpts:MapTypeControlOptions;
   geolocationOpts:GeolocationControlOptions
 
-  //public GPSList:GPS[];//这个可能不需要
-  //ismarkersTestk:boolean = true;
+
   public markers:Marker[] = [];
   public isShow:boolean = false;//控制该模块显示不显示
   public subregion: Subregion;//值从tab-control来
-  public GPSList:GPS[]=[];
+  //public GPSList:GPS[]=[];
   private _sensors: Sensor[];
-  //private gpsSensor: any[]=[];
-  public marker:Marker = new Marker();//单个gps显示
-  private gps:GPS = new GPS();
+  //public marker:Marker = new Marker();//单个gps显示
+  public gps:any;
   //public points:Array<Point>;
   public polylineOptions: PolylineOptions;
   public isReal:boolean = true;//默认显示实时位置界面
   public isHistory:boolean = false;//默认不显示历史轨迹
-  
-  public historyList:GPS[] = [];//储存历史数据gps
+
   public historyData:Array<Array<any>>;
   public historyMarkers:Marker[]=[]; //历史数据markers用于表格显示
-  public points:Array<Point>=[];//历史数据point用于轨迹绘制
+  public points:Array<Point>=[];//历史数据points用于轨迹绘制
 
   private startDate = '';//起始时间
   private endDate = '';//结束时间
+  private subregionName:string;//title
 
 
   constructor(
@@ -119,15 +117,13 @@ export class GpsPanelComponent implements OnInit {
 
   ngOnInit(){
 
-    //this.startDate = new Date().getDate
-
     this._sensors = this.subregion.sensors;
     console.log(this._sensors);
     this._sensors.map(sensor => {
       if(sensor.category == "gps"){
-        let gps = this._gpsCoordService.GPSGenerator(sensor);
-        console.log(gps);
-        this.GPSList.push(gps);
+        this.gps = this._gpsCoordService.GPSGenerator(sensor);
+        console.log(this.gps);
+        this.subregionName = this.gps.parentInfo.region.split('|')[1];
       }
     });
     /**
@@ -137,31 +133,25 @@ export class GpsPanelComponent implements OnInit {
      */
     this._websocketService.valSubject
     .map(msg=>{
-      if(msg.name == `${this.GPSList[0].key}@${this.GPSList[0].parentInfo.entityId}`){
-        this.GPSList[0].data = msg.data;
-        this.GPSList[0].marker = this._gpsCoordService.handleGPSRawdata(msg.data.data);
-        this.GPSList[0].marker.time = msg.data.time;
-        this.GPSList[0].marker.title = this.GPSList[0].name;
-        //一般只有一个GPS，不会有好几个的
-        //原大模块的this.gpsSubject.next(new Message(`${this.GPSList[tmp].parentInfo.entityId}`,this.GPSList[tmp]))//存到gps订阅号里
-        //this.gps = this.GPSList[0];
-        //this.marker = this.gps.marker;
-        this.markers[0] = this.GPSList[0].marker;//一定要是个mark list，不知道为何百度地图了单独的marker显示不了
-        this.marker = this.markers[0];
-        this.gps = this.GPSList[0];
+      if(msg.name == `${this.gps.key}@${this.gps.parentInfo.entityId}`){
+        this.gps.data = msg.data;
+        this.gps.marker = this._gpsCoordService.handleGPSRawdata(msg.data.data);
+        this.gps.marker.time = msg.data.time;
+        this.gps.marker.title = this.gps.name;
+        //一定要是个mark list，不知道为何百度地图了单独的marker显示不了
+        this.markers[0] = this.gps.marker;
+
         //随marker改变地图中心点
         this.opts.centerAndZoom.lat=this.markers[0].point.lat;
         this.opts.centerAndZoom.lng=this.markers[0].point.lng;
         console.log(this.opts.centerAndZoom);
-        console.log(this.GPSList[0]);
         console.log(this.markers[0]);
-      }else if(msg.name == `!${this.GPSList[0].key}@${this.GPSList[0].parentInfo.entityId}`){
+      }else if(msg.name == `!${this.gps.key}@${this.gps.parentInfo.entityId}`){
         //历史数据
         this.historyData = msg.data;
         for(var tmp in msg.data){
           this.historyMarkers[tmp] = this._gpsCoordService.handleGPSRawdata(msg.data[tmp][1]);
           this.historyMarkers[tmp].time = msg.data[tmp][0];
-          //this.points[tmp] = this.historyMarkers[tmp].point;
           this.points.push(this.historyMarkers[tmp].point);
         }
         console.log(this.historyMarkers);
@@ -240,6 +230,7 @@ export class GpsPanelComponent implements OnInit {
     this.historyMarkers = [];
     //this.timeOption._timeIn = 365;//测试默认显示三日数据！！测试用！！
     this.isReal = false;//隐藏实时位置的marker
+    this.isHistory = false;//每次查询数据都是一次新的过程，从发送ws数据到渲染历史轨迹曲线
     console.log("获取gps历史信息")
     //发送该gps信息获取历史信息的ws
     this._websocketService.getHistoryDataByDeviceIdWithStartAndEnd(gps.parentInfo.entityId,gps.key,this.startDate,this.endDate);
