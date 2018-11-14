@@ -69,7 +69,7 @@
             </tr>
           </tbody>
       </nz-table>-->
-      <nz-table #nzTable [nzDataSource]="markers" [nzPageSize]="50" [nzScroll]="{ y: 300 }">
+      <nz-table #nzTable [nzPageSize]="50" [nzScroll]="{  x:1920, y: 300 }">
         <ng-template #nzFixedHeader>
           <thead nz-thead>
             <tr>
@@ -77,6 +77,7 @@
               <th nz-th [nzWidth]="'150px'"><span>运行方向</span></th>
               <th nz-th [nzWidth]="'150px'"><span>运行速度</span></th>
               <th nz-th [nzWidth]="'150px'"><span>状态</span></th>
+              <th nz-th [nzWidth]="'150px'" *ngFor="let sensor of OBDsensors"><span>{{sensor.name}}</span></th>
             </tr>
           </thead>
         </ng-template>
@@ -86,6 +87,7 @@
             <td nz-td>{{data.direction}}</td>
             <td nz-td>{{data.speed}}</td>
             <td nz-td></td>
+            <td nz-td *ngFor="let sensor of OBDsensors">{{sensor.data.data}}</td>
           </tr>
         </tbody>
       </nz-table>

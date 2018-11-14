@@ -28,7 +28,7 @@ export class MainPanelComponent implements OnInit {
     this._sensors = this.subregion.sensors;
     console.log(this._sensors);
     this._sensors.map(sensor => {
-      if(sensor.category == "sensor")
+      if(sensor.category == "sensor" || sensor.category == "OBDsensor")
         this.normalSensors.push(sensor);
       if(sensor.category == "controller")
         this.controllers.push(sensor);

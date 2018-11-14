@@ -43,6 +43,7 @@ export class GpsPanelComponent implements OnInit {
   public subregion: Subregion;//值从tab-control来
   //public GPSList:GPS[]=[];
   private _sensors: Sensor[];
+  public OBDsensors:Sensor[] =[]; //存放OBD传感器
   //public marker:Marker = new Marker();//单个gps显示
   public gps:any;
   //public points:Array<Point>;
@@ -57,6 +58,9 @@ export class GpsPanelComponent implements OnInit {
   private startDate = '';//起始时间
   private endDate = '';//结束时间
   private subregionName:string;//title
+
+  public test = ["123","232"];
+  public data=[];
 
 
   constructor(
@@ -125,7 +129,11 @@ export class GpsPanelComponent implements OnInit {
         console.log(this.gps);
         this.subregionName = this.gps.parentInfo.region.split('|')[1];
       }
+      if(sensor.category == "OBDsensor"){
+        this.OBDsensors.push(sensor);
+      }
     });
+    console.log(this.OBDsensors);
     /**
      * 接受websocket的实时数据，数据分为实时和历史数据两种
      * 实时数据返回：Message {name: "H0940@f3ab7880-9ecf-11e8-ad4b-4dd707116a31", data: {…}}
@@ -158,6 +166,12 @@ export class GpsPanelComponent implements OnInit {
         console.log(this.points);
         this.isHistory = true;//当所有异步进程加载完以后再渲染polyline
       }
+      this.OBDsensors.forEach((sensor)=>{
+        if(msg.name == `${sensor.key}@${sensor.parentInfo.entityId}`){
+          sensor.data = msg.data;
+        }
+        return sensor;
+      })
     }
     ).subscribe();
     
@@ -192,6 +206,14 @@ export class GpsPanelComponent implements OnInit {
     console.log(this.markers);
     });
 **/
+
+for (let i = 0; i < 100; i++) {
+  this.data.push({
+    name   : `Edward King ${i}`,
+    age    : 32,
+    address: `London, Park Lane no. ${i}`,
+  });
+}
   }
 
   loadMap(map:any){

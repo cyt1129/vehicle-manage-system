@@ -5,6 +5,8 @@ export class Sensor {
   category: string;
   trans: number[];
   config: any;
+  data?:any;
+  time?:any;
 
   parentInfo: ParentInfo = new ParentInfo();
 
