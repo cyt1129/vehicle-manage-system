@@ -59,8 +59,7 @@ export class GpsPanelComponent implements OnInit {
   private endDate = '';//结束时间
   private subregionName:string;//title
 
-  public test = ["123","232"];
-  public data=[];
+
 
 
   constructor(
@@ -206,14 +205,6 @@ export class GpsPanelComponent implements OnInit {
     console.log(this.markers);
     });
 **/
-
-for (let i = 0; i < 100; i++) {
-  this.data.push({
-    name   : `Edward King ${i}`,
-    age    : 32,
-    address: `London, Park Lane no. ${i}`,
-  });
-}
   }
 
   loadMap(map:any){
