@@ -1,9 +1,11 @@
 <div [ngStyle]="{'display': isShow?'block':'none'}"> 
+  <!--标题-->
   <div class="light-gps-title" >
     <span class="light-title-brown"></span>
     <p>{{subregionName}}</p>
   </div>
   <hr>
+  <!--地图-->
   <div class="light-gps-content">
     <div style="height:500px;width:900px">
       <baidu-map [options]="opts">
@@ -30,6 +32,7 @@
   </div>
 
   <div class="light-gps-control">
+    <!--选择历史数据或者实时数据-->
     <div class="gps-button">
       <div class="gps-button-real" (click)="showReal()">
           <span>实时位置</span>
@@ -48,27 +51,8 @@
       </div> 
     </div>
 
+    <!--实时数据-->
     <div [ngStyle]="{'display':isReal?'block':'none'}">
-      <!--<nz-table #nzTable [nzDataSource]="markers">
-        <ng-template #nzFixedHeader >
-          <thead nz-thead>
-            <tr>
-              <th nz-th [nzWidth]="'150px'">车牌号</th>
-              <th nz-th>运行速度</th>
-              <th nz-th>运行方向</th>
-              <th nz-th>最后更新时间</th>
-            </tr>
-          </thead>
-        </ng-template>
-          <tbody nz-tbody>
-            <tr nz-tbody-tr *ngFor="let marker of markers"> 
-              <td>{{marker.title}}</td>
-              <td>{{marker.speed}}</td>
-              <td>{{marker.direction}}</td>
-              <td>{{marker.time | timePipe}}</td>
-            </tr>
-          </tbody>
-      </nz-table>-->
       <nz-table #nzTable [nzPageSize]="50" [nzScroll]="{  x:1920, y: 300 }">
         <ng-template #nzFixedHeader>
           <thead nz-thead>
@@ -77,7 +61,7 @@
               <th nz-th [nzWidth]="'150px'"><span>运行方向</span></th>
               <th nz-th [nzWidth]="'150px'"><span>运行速度</span></th>
               <th nz-th [nzWidth]="'150px'"><span>状态</span></th>
-              <th nz-th [nzWidth]="'150px'" *ngFor="let sensor of OBDsensors"><span>{{sensor.name}}</span></th>
+            <!--  <th nz-th [nzWidth]="'150px'" *ngFor="let sensor of OBDsensors"><span>{{sensor.name}}</span></th>-->
             </tr>
           </thead>
         </ng-template>
@@ -87,12 +71,14 @@
             <td nz-td>{{data.direction}}</td>
             <td nz-td>{{data.speed}}</td>
             <td nz-td></td>
-            <td nz-td *ngFor="let sensor of OBDsensors">{{sensor.data.data}}</td>
+            <!--<td nz-td *ngFor="let sensor of OBDsensors">{{sensor.data.data}}</td>-->
           </tr>
         </tbody>
       </nz-table>
+      <app-obd-panel [sensors]="OBDsensors"></app-obd-panel>
       </div>
 
+      <!--历史数据-->
       <div [ngStyle]="{'display':isHistory?'block':'none'}">
         <nz-table #nzTable [nzDataSource]="historyMarkers" [nzPageSize]="50" [nzScroll]="{ y: 300 }">
           <ng-template #nzFixedHeader>

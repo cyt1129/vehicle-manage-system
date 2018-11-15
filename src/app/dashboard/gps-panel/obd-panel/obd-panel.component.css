@@ -1,0 +1,10 @@
+.outer{
+    width:200px;
+    height:20px;
+    background-color: antiquewhite;
+    margin-top:20px;
+}
+.inner{
+    height: 20px;
+    background: red;
+}

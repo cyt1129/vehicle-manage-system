@@ -22,6 +22,7 @@ import { GpsService } from "./gps-panel/gps.service";
 import { GpsCoordService } from "./gps-panel/gps-coord.service"; 
 import { RegionService } from "./region-panel/service/region.service";
 import { FormsModule } from "@angular/forms";
+import { ObdPanelComponent } from './gps-panel/obd-panel/obd-panel.component';
 
 @NgModule({
   imports: [
@@ -44,6 +45,7 @@ import { FormsModule } from "@angular/forms";
     TabControlComponent,
     TimePipePipe,
     GpsPanelComponent,
+    ObdPanelComponent,
   ],
   providers: [UserService, WebsocketService, AlarmService,GpsService,GpsCoordService,RegionService],
   entryComponents: [MainPanelComponent,GpsPanelComponent],

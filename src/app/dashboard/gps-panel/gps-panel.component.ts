@@ -1,5 +1,5 @@
 import { Component,OnInit,ChangeDetectionStrategy,ChangeDetectorRef,OnDestroy} from  "@angular/core";
-import { FormsModule } from "@angular/forms";
+//import { FormsModule } from "@angular/forms";
 import {
   MapOptions, 
   Point, 
@@ -14,11 +14,11 @@ import {
   GeolocationControlOptions,
   PolylineOptions
 } from 'angular2-baidu-map';
-import { GpsService } from './gps.service';
+//import { GpsService } from './gps.service';
 import { GpsCoordService } from './gps-coord.service';
 import { Marker } from "./model/marker";
 import { Subregion } from "../model/subregion";
-import { GPS } from "./model/gps";
+//import { GPS } from "./model/gps";
 import { Sensor } from "../model/sensor";
 import { WebsocketService } from "../websocket.service";
 import { timeOption } from "../model/timeOption";
@@ -165,12 +165,12 @@ export class GpsPanelComponent implements OnInit {
         console.log(this.points);
         this.isHistory = true;//当所有异步进程加载完以后再渲染polyline
       }
-      this.OBDsensors.forEach((sensor)=>{
+      /*this.OBDsensors.forEach((sensor)=>{
         if(msg.name == `${sensor.key}@${sensor.parentInfo.entityId}`){
           sensor.data = msg.data;
         }
         return sensor;
-      })
+      })*/
     }
     ).subscribe();
     

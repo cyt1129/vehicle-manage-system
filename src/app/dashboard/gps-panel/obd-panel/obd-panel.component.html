@@ -1,0 +1,31 @@
+<div> 
+  <!--标题-->
+  <!--表格-->
+  <div *ngIf="showTable">
+      <nz-table #nzTable [nzPageSize]="50" [nzScroll]="{  x:1920, y: 300 }">
+        <ng-template #nzFixedHeader>
+          <thead nz-thead>
+            <tr>
+              <th nz-th [nzWidth]="'150px'"><span>参数名称</span></th>
+              <th nz-th [nzWidth]="'150px'"><span>数据</span></th>
+              <th nz-th [nzWidth]="'150px'"><span>上报时间</span></th>
+            </tr>
+          </thead>
+        </ng-template>
+        <tbody nz-tbody>
+          <tr nz-tbody-tr *ngFor="let sensor of sensors">
+            <td nz-td>{{sensor.name}}</td>
+            <td nz-td>{{sensor.data.data}}</td>
+            <td nz-td>{{sensor.data.time|timePipe}}</td>
+          </tr>
+        </tbody>
+      </nz-table>
+  </div>
+
+<!--用精度条来展示obd数据-->
+  <div class="outer">
+    <div class="inner" [ngStyle]="{'width':calWidth('50')}">
+
+    </div>
+  </div>
+</div>
