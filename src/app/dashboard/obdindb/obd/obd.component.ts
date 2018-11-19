@@ -17,6 +17,8 @@ export class ObdComponent implements OnInit {
   public min:number;
   public max:number;
   public unit:string;
+  public previousValue = 20;//前一个width值
+  public currentValue = 20;//当前的width值
 
   ngOnInit() {
     this._websocketService.valSubject
@@ -34,13 +36,17 @@ export class ObdComponent implements OnInit {
   }
   /**控制条的宽度 */
   generateWidth(value:number,min:number,max:number):string{
+    this.previousValue = this.currentValue;
     var result = (value-min)/(max-min) * 100;
     if(result > 100){
+      this.currentValue = 100;
       return '100%';
     }
     else if(result < 25){
+      this.currentValue = 25;
       return '25%';
     }else{
+      this.currentValue = result;
       return result+'%';
     }
   }
