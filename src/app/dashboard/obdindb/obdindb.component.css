@@ -1,0 +1,27 @@
+.light-obd-title{
+    margin-bottom: 5px;
+    padding: 8px 8px 8px 0;
+    color: #e5e5e5;
+    background-color: #2c3b47;
+}
+
+.light-obd-title .light-title-red {
+    display: inline-block;
+    width: 6px;
+    height: 26px;
+    background-color: #de1e1e;
+}
+
+.light-obd-title p {
+    display: inline-block;
+    margin: 0 0 0 6px;
+    line-height: 26px;
+    font-size: 16px;
+    vertical-align: top;
+}
+
+.light-obd-content {
+  
+    background-color: #2c3b47;
+  }
+  

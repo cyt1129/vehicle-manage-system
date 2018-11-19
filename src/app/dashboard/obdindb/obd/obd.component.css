@@ -1,0 +1,34 @@
+.obd{
+    /*border:1px solid red;*/
+    margin:10px 0;
+    padding: 2px;
+}
+
+.obd-name{
+    font-size: 14px;
+    color:white;
+    margin-bottom: 2px;
+    margin-left: 5px;
+
+}
+
+.obd-outer{
+    height:28px;
+    /*background-color: #fff;*/
+    border-radius: 14px;
+}
+
+.obd-inner{
+    height: 28px;
+    background-color: aqua;
+    border-radius: 14px;
+}
+
+.obd-data{
+    display: block;
+    float: right;
+    line-height: 28px;
+    font-size: 14px;
+    margin-right: 8px;
+
+}

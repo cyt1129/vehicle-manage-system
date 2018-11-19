@@ -23,6 +23,8 @@ import { GpsCoordService } from "./gps-panel/gps-coord.service";
 import { RegionService } from "./region-panel/service/region.service";
 import { FormsModule } from "@angular/forms";
 import { ObdPanelComponent } from './gps-panel/obd-panel/obd-panel.component';
+import { ObdindbComponent } from './obdindb/obdindb.component';
+import { ObdComponent } from './obdindb/obd/obd.component';
 
 @NgModule({
   imports: [
@@ -46,6 +48,8 @@ import { ObdPanelComponent } from './gps-panel/obd-panel/obd-panel.component';
     TimePipePipe,
     GpsPanelComponent,
     ObdPanelComponent,
+    ObdindbComponent,
+    ObdComponent,
   ],
   providers: [UserService, WebsocketService, AlarmService,GpsService,GpsCoordService,RegionService],
   entryComponents: [MainPanelComponent,GpsPanelComponent],

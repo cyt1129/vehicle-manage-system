@@ -1,6 +1,6 @@
 /*总长度*/
 .light-header {
-  width: 1280px;
+  width: 100%;
   height: 120px;
   margin: 0 auto;
   /*border:1px solid white;*/
@@ -17,13 +17,16 @@
   line-height: 90px;
   color: #81a348;
   overflow:hidden;
-  padding-left: 0.5em;
+  /*padding-left: 0.5em;*/
+  display: block;
+  width:1280px;
+  margin: 0 auto;
 }
 /*顶部*/
 .light-header-admin {
   float:right;
   
-  width:1280px;
+  width:100%;
   height: 30px;
   color: #e5e5e5;
   margin-top: 0px;

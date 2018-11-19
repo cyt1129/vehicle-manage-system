@@ -1,0 +1,26 @@
+<div class="obd">
+<div class="obd-name">
+  {{obd.name}}
+</div>
+<div class="obd-banner" *ngIf="value;else elseP">
+  <div class="obd-outer">
+    <div class="obd-inner" [ngStyle]="{'width':generateWidth(value,min,max)}">
+      <div class="obd-data">
+        {{value}}{{unit}}
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #elseP>
+    <div class="obd-banner">
+        <div class="obd-outer">
+          <div class="obd-inner" [ngStyle]="{'width':'100%','background-color':'#e8e8e8'}">
+            <div class="obd-data">
+              暂无数据
+            </div>
+          </div>
+        </div>
+      </div>
+</ng-template>
+</div>

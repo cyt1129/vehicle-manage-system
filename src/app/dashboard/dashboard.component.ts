@@ -1,5 +1,6 @@
 import {Component, ViewChild,OnInit} from "@angular/core";
 import { RegionService } from "./region-panel/service/region.service";
+import { Subregion } from "./model/subregion";
 
 @Component({
   selector: 'app-dashboard',
@@ -9,6 +10,7 @@ import { RegionService } from "./region-panel/service/region.service";
 export class DashboardComponent implements OnInit{
 
   @ViewChild('tabCtrl') tabCtrl;
+  public subregion:Subregion;
 
   constructor(
     private _regionService:RegionService
@@ -19,6 +21,7 @@ export class DashboardComponent implements OnInit{
   }
 
   onRegionSelect(subregion): void {
+    this.subregion = subregion;
     console.info(subregion);
 
     if(this.tabCtrl.hasSubregion(subregion)){

@@ -12,21 +12,14 @@
         <div class="light-alert">
            <app-alarm-panel></app-alarm-panel>
         </div>
-        <!--<div class="light-split"></div>-->
-        <!-- <div class="light-history">
-          <app-history-panel></app-history-panel>
-        </div> -->
         <div class="light-split"></div>
-        <!--<div class="light-gps">
-          <app-gps-panel></app-gps-panel>
-        </div>-->
+        <div class="light-obd">
+          <app-obdindb [subregion]="subregion"></app-obdindb>
+        </div>
       </div>
 
       <!--right-->
       <div class="light-left">
-        <!--<div class="light-left-content">-->
-          <!--<app-main-panel></app-main-panel>-->
-        <!--</div>-->
         <app-tab-control #tabCtrl></app-tab-control>
       </div>
     </div>

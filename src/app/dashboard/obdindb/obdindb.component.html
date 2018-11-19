@@ -1,0 +1,19 @@
+<!--<div>
+  obdindb works!
+  <div class="banner" *ngFor="let sensor of sensors">
+    <div class="obd-name">进气温度</div>
+    <div class="obd-outer">
+      <div class="ond-inner">
+        <div classs="data">87</div>
+      </div>
+    </div>
+  </div>
+
+</div>-->
+<div class="light-obd-title">
+    <span class="light-title-red"></span>
+    <p>OBD参数</p>
+</div>
+<div class="light-bd-content">
+  <app-obd *ngFor="let sensor of sensors" [obd]="sensor"></app-obd>
+</div>
