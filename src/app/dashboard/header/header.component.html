@@ -12,7 +12,15 @@
   </div>
   
   <div class="light-header-title">
-    <span>{{user.companyName}}</span>
+    <div class="light-header-div">
+      <span>{{user.companyName}}</span>
+      <div class="light-header-center">
+        <div class="center" (click)="logoutButtonClickHandler()">退出系统</div>
+         <div class="center">个人中心</div>
+         <div class="center" (click)="loginCfg()">设备管理</div>
+         <div class="center">控制台</div>
+      </div>
+    </div>
   </div>
 
 </div>

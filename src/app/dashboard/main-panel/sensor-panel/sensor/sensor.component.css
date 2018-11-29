@@ -9,7 +9,7 @@ li{
   margin-top: 8px;
 }
 li:hover{
-  box-shadow: 3px 3px 5px rgb(3, 1, 15);
+  box-shadow: 0 1px 2px 0 rgba(0,0,0,0.5);
   color:black;
 
 }
@@ -103,11 +103,11 @@ li .data-value .data-big-gray{
   font-size: 18px;
   height:50px;
 
-  line-height: 50px;
+  line-height: 70px;
 }
 
 li .data-value .data-small-gray{
-  margin-right: 5px;
+  /*margin-right: 5px;*/
   font-size: 8px;
   height: 30px;
   line-height: 30px;

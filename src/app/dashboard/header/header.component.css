@@ -6,6 +6,12 @@
   /*border:1px solid white;*/
 }
 
+.light-header-div{
+  width:1280px;
+  margin:0 auto;
+  height: 105px;
+}
+
 .light-header-title{
   background-color: #2c3b47;
   box-shadow: 0 1px 2px 0 rgba(0,0,0,0.5);
@@ -15,15 +21,35 @@
   margin-top: 27px;
 }
 
-.light-header-title > span{
+.light-header-div > span{
   font-size: 32px;
   line-height: 75px;
   color: #b5d84a;/*#81a348;*/
-  overflow:hidden;
+  /*overflow:hidden;*/
   /*padding-left: 0.5em;*/
   display: block;
-  width:1280px;
+  /*width:1280px;*/
   margin: 0 auto;
+  float: left;
+}
+.light-header-center{
+  display:block;
+  height:75px;
+  float: right;
+}
+.center{
+  display: block;
+  float: right;
+  font-size: 14px;
+  line-height: 75px;
+  /*margin: 0 20px;*/
+  color:#fff;
+  padding: 0 20px;
+}
+
+.center:hover{
+  background-color:#152341;
+  cursor: pointer;
 }
 /*顶部*/
 .light-header-admin {
