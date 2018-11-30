@@ -1,12 +1,12 @@
 import {Injectable} from "@angular/core";
 import {Headers, Http, RequestOptions} from "@angular/http";
-import {User} from "../../../dashboard/header/model/user";
+import {User} from "../../../inter/dashboard/header/model/user";
 
 import "rxjs/add/operator/toPromise";
 
 import {Token} from "../model/token";
 import {Subject} from "rxjs/Subject";
-import {Message} from "../../../dashboard/model/message";
+import {Message} from "../../../inter/dashboard/model/message";
 import {environment} from "../../../../environments/environment";
 
 @Injectable()
@@ -48,6 +48,7 @@ export class UserService {
   getUserInfo(): Subject<Message> {
     let subject = new Subject<any>();
     // TODO deal with this callback hell.
+    //auth/user得到用户信息
     this.http.get(this.authUserUrl, this.httpOption).toPromise()
       .then(response => {
         let auth_user = response.json();
@@ -64,6 +65,7 @@ export class UserService {
         subject.next(new Message("userinfo", user));
         return user.id;
       })
+      //api/customer/customerId获得customer的公司、邮箱等信息
       .then((id) => {
         this.http.get(this.customerUrl + "/" + id, this.httpOption).toPromise()
           .then(response => {
@@ -81,6 +83,7 @@ export class UserService {
             subject.next(new Message("companyinfo", user));
             return id;
           })
+          //api/customer/customerId/devices?limit=50获得cutomer的设备们的id
           .then((id) => {
             this.http.get(`${this.customerUrl}/${id}/devices?limit=50`, this.httpOption).toPromise()
               .then(response => {

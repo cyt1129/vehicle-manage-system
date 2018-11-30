@@ -1,4 +1,3 @@
-import {RouterModule} from '@angular/router';
 
 export const appRoutes = [
   {
@@ -10,6 +9,7 @@ export const appRoutes = [
     path: "user",
     loadChildren: './user/user.module#UserModule'
   },
+  /*
   {
     path: "dashboard",
     loadChildren: './dashboard/dashboard.module#DashboardModule'
@@ -17,5 +17,10 @@ export const appRoutes = [
   {
     path: "cfg",
     loadChildren: './cfg/cfg.module#CfgModule'
-  }
+  },
+  */
+  {
+    path:"inter",
+    loadChildren:'./inter/inter.module#InterModule'
+  },
 ];

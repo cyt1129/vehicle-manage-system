@@ -1,0 +1,108 @@
+/*总长度*/
+
+.light-bg {
+    width: 100%;
+    min-width: 1280px;
+    margin: 0;
+    font: 12px "Microsoft YaHei";
+    background-color: #152341;/*152341*/
+
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+
+.light-header {
+    width: 100%;
+    height: 105px;
+    margin: 0 auto;
+    /*border:1px solid white;*/
+  }
+  
+  .light-header-div{
+    width:1280px;
+    margin:0 auto;
+    height: 105px;
+  }
+  
+  .light-header-title{
+    background-color: #2c3b47;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,0.5);
+  }
+  /*logo+企业名称*/
+  .light-header-title > img{
+    margin-top: 27px;
+  }
+  
+  .light-header-div > span{
+    font-size: 32px;
+    line-height: 75px;
+    color: #b5d84a;/*#81a348;*/
+    /*overflow:hidden;*/
+    /*padding-left: 0.5em;*/
+    display: block;
+    /*width:1280px;*/
+    margin: 0 auto;
+    float: left;
+  }
+  .light-header-center{
+    display:block;
+    height:75px;
+    float: right;
+  }
+  .center{
+    display: block;
+    float: right;
+    font-size: 14px;
+    line-height: 75px;
+    /*margin: 0 20px;*/
+    color:#fff;
+    padding: 0 20px;
+  }
+  
+  .center:hover{
+    background-color:#152341;
+    cursor: pointer;
+  }
+  a{
+    color:#fff;
+    outline: none;
+    display: block;
+  }
+  /*顶部*/
+  .light-header-admin {
+    float:right;
+    
+    width:100%;
+    height: 30px;
+    color: #595959;
+    margin-top: 0px;
+    background-color: #d8d8d8;
+  }
+  
+  .light-header-admin ul{
+    float:right;
+  }
+  
+  .light-header-admin li{
+    display: inline-block;
+    width: 90px;
+    height:30px;
+    line-height: 30px;
+    cursor: pointer;
+    /*border:1px solid red;*/
+  }
+  
+  .light-header-admin li>img{
+    vertical-align: middle;
+  }
+  
+  /*左侧欢迎管理员语句*/
+  .light-header-admin-customer{
+    display: block;
+    float: left;
+    /*border: 1px solid yellow;*/
+    height: 30px;
+    width: 180px;
+    padding:10px 10px
+  }

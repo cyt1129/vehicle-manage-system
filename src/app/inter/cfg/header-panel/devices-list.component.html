@@ -1,0 +1,8 @@
+<ul class="tabs">
+    <li *ngFor="let device of devices"  
+        [ngClass]="isActive(device.name)"
+        (click)="activeClk(device.name,device.id)">
+        {{device.name}}
+    </li>
+    <!--<li>{{testx}}</li>-->
+</ul>

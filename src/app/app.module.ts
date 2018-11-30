@@ -10,6 +10,7 @@ import {UserModule} from "./user/user.module";
 import {appRoutes} from "./app.routes";
 import {UserService} from "./user/login/service/user.service";
 import {HashLocationStrategy, LocationStrategy} from '@angular/common';
+import { InterModule } from "./inter/inter.module";//测试
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import {HashLocationStrategy, LocationStrategy} from '@angular/common';
     JsonpModule,
     RouterModule,
     UserModule,
+    InterModule,//测试
     NgZorroAntdModule.forRoot(),
 
     RouterModule.forRoot(appRoutes)
