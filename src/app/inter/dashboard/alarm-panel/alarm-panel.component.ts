@@ -12,6 +12,7 @@ import {AlarmService} from "./alarm.service";
 export class AlarmPanelComponent implements OnInit {
   dataSet = [];
 
+
    constructor(
      private _alarmService: AlarmService
    ) { }
@@ -29,13 +30,14 @@ export class AlarmPanelComponent implements OnInit {
             this._alarmService.getAlarmInfo()
                .subscribe(alarm => {
                  console.log(alarm);
-                  this.dataSet.push(
+                 this.dataSet.push(
                      {
                        time   :alarm.startTs,
                       status  :alarm.status,
                       type    :alarm.type,
                       device  :alarm.device,
-                    });     
+                    }); 
+                
                  });
          
   }

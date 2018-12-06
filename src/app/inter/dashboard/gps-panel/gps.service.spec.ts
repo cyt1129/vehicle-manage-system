@@ -1,15 +1,15 @@
 import { TestBed, inject } from '@angular/core/testing';
 
-import { GpsServiceService } from './gps-service.service';
+import { GpsService } from './gps.service';
 
 describe('GpsServiceService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [GpsServiceService]
+      providers: [GpsService]
     });
   });
 
-  it('should be created', inject([GpsServiceService], (service: GpsServiceService) => {
+  it('should be created', inject([GpsService], (service: GpsService) => {
     expect(service).toBeTruthy();
   }));
 });
