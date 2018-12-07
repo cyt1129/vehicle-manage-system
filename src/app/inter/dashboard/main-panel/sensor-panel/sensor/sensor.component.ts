@@ -4,24 +4,37 @@ import {WebsocketService} from "../../../websocket.service";
 //import {StockChart} from 'angular-highcharts';
 import {EChartOption} from 'echarts-ng2';
 import {timeOption} from './../../../model/timeOption';
+import { DomSanitizer } from '@angular/platform-browser';
 @Component({
   selector: 'app-sensor',
   templateUrl: './sensor.component.html',
   styleUrls: ['./sensor.component.css']
 })
 export class SensorComponent implements OnInit {
+
+  constructor(
+    private _websocketService: WebsocketService,
+    private sanitizer:DomSanitizer
+  ) {
+    
+  }
+
+
 @Output() periodChanged = new EventEmitter<any>();
  // stock:StockChart;
  //历史曲线
  chartOption :EChartOption;
  private _data: Array<Array<any>>;
+ public historicalRecord:Array<any>;
+ public uri:string;
+ public trustedUri:any;
+ //public url = "data:text/csv";
  //弹出框
  //历史曲线时间选择
  //加载中
- _isSpin = false;
+ _isSpin = true;
 timeoption1 = 7;
  public timeOption:timeOption = new timeOption();
- 
  print(num:number){
    this.timeoption1 = num;
    this.timeOption._timeIn = this.timeoption1;
@@ -51,10 +64,7 @@ timeoption1 = 7;
   public value: number;
   public time : string;
 
-  constructor(
-    private _websocketService: WebsocketService
-  ) {
-  }
+
 
   ngOnInit() {
     console.log("in sensor component:");
@@ -89,7 +99,7 @@ timeoption1 = 7;
         break;
       }
     }
-
+    //取实时数据
     this._websocketService.valSubject
       .filter(msg => msg.name == `${this.sensorAttr.key}@${this.sensorAttr.parentInfo.entityId}`)
       .map(msg => msg.data)
@@ -100,17 +110,26 @@ timeoption1 = 7;
 
         this.value = data.data;
       });
-      
+    
+    //取历史数据
+    /*
     this._websocketService.historicalSubject
       .subscribe(sensor => {
-
+        console.log(sensor);
+*/
         this._websocketService.valSubject
           .subscribe(msg => {
-            if(msg.name == `!${sensor.key}@${sensor.parentInfo.entityId}`){
-              // subscribe for historical data
+            //console.log(msg);
+            if(msg.name == `!${this.sensorAttr.key}@${this.sensorAttr.parentInfo.entityId}`){
+              // subscribe for historical data.
+              console.log(msg);
               this._data = msg.data;
               this._isSpin = false;
-              this.chartOption = this.getOpt(this._data, sensor.name);
+              this.chartOption = this.getOpt(this._data, this.sensorAttr.name);
+              
+              this.historicalRecord = this.historicalDataPackage(this._data);
+              console.log(this.historicalRecord);
+
             }
             // else if(msg.name){
             //   // subscribe for latest data.
@@ -125,9 +144,10 @@ timeoption1 = 7;
             // this._isSpin = false;
             // this.chartOption = this.getOpt(this._data, sensor.name);
            // }
-          })
+          });
+          /*
       });
-      
+     */ 
   }
 
   private getOpt(data: Array<Array<any>>, name: string): EChartOption {
@@ -180,6 +200,25 @@ timeoption1 = 7;
       }]
     };
     return opt;
+   }
+
+   private historicalDataPackage(data:any):any{
+     var pkg = [];
+     var str = "传感器名称,上报时间,值,单位\n";
+     data.map(data=>{
+         let record = {
+           "name":this.sensorAttr.name,
+           "time":data[0],
+           "value":data[1],
+           "unit":this.sensorAttr.config.type
+         }
+         pkg.push(record);
+         str += `${this.sensorAttr.name},${data[0]+'\t'},${data[1]},${this.sensorAttr.config.unit}\n`
+     });
+     this.uri = 'data:text/csv;charset=utf-8,\ufeff' + encodeURIComponent(str);
+     this.trustedUri = this.sanitizer.bypassSecurityTrustUrl(this.uri);
+     //console.log(this.uri);
+     return pkg;
    }
 
 }

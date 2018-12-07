@@ -44,6 +44,9 @@
           <nz-spin [nzTip] = "'正在努力加载数据...'" [nzSpinning] = "_isSpin">  
             <echarts-ng2 [option]="chartOption" [style]="{'width': '950px', 'height': '500px', 'display': 'inline-block'}"> 
             </echarts-ng2>
+            <div class="excel">
+              <a [href]="trustedUri" download="历史数据.csv">导出数据</a>
+            </div>
           </nz-spin>
          </div>
         </ng-template>
