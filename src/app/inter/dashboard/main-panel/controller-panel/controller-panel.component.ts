@@ -19,6 +19,7 @@ export class ControllerPanelComponent implements OnInit, AfterViewInit {
 
   twoStatCtrlList: any[];
   threeStatCtrlList: any[];
+  inputCtrlList:any[];//用户输入型的控制
 
   @ViewChildren(TwoStateComponent)
   private twoStatCtrlComponent: QueryList<TwoStateComponent>;
@@ -28,8 +29,13 @@ export class ControllerPanelComponent implements OnInit, AfterViewInit {
   constructor() {
     this.twoStatCtrlList = [];
     this.threeStatCtrlList = [];
+    this.inputCtrlList = [];
   }
 
+  /**
+   * 
+   * @param key 根据key获取sensor
+   */
   private getAmpSensorCfgByKey(key: string): Object {
     if (!isNullOrUndefined(key)) {
       for (let i = 0; i < this.asList.length; i++) {
@@ -62,14 +68,25 @@ export class ControllerPanelComponent implements OnInit, AfterViewInit {
 
         this.threeStatCtrlList.push(ctrlInfo);
       }
+      //输入控制，配一个当前上报速率的显示值
+      if (controller.config.type == "输入控制"){
+        let ctrlInfo:ControllerInfo = new ControllerInfo();
+        ctrlInfo.controller = controller;
+        ctrlInfo.ampereSensor.push(this.getAmpSensorCfgByKey(controller.config.rate_key));
+
+        this.inputCtrlList.push(ctrlInfo);
+        
+      }
     });
     // console.log(this.twoStatCtrlList);
     // console.log(this.threeStatCtrlList);
+    console.log(this.inputCtrlList);
   }
 
   ngAfterViewInit() {
     console.info(this.twoStatCtrlComponent);
     console.info(this.threeStatCtrlComponent);
+    
   }
 
   /**

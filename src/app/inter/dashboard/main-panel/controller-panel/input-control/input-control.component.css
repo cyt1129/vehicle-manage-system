@@ -1,0 +1,27 @@
+li {
+    display: inline-block;
+    margin: 3px 0 0 8px;
+    width: 208px;
+    border: 1px solid #999;
+  }
+  
+  .control-name-purple {
+    height: 60px;
+    line-height: 60px;
+    font-size: 16px;
+    text-align: center;
+    background: #7987cd url(/assets/img/controltwo.png) 5% 20% no-repeat;
+  
+    position: relative;
+  }
+  
+  .control-panel {
+    padding: 0 10px;
+    height: 190px;
+    background: #193850 ;
+  }
+  
+  .control-panel .control-time-orange {
+    line-height: 32px;
+    color: #c47438;
+  }

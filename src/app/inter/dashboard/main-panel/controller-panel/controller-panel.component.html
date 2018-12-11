@@ -58,4 +58,17 @@
       </ul>
     </div>
   </div>
+
+  <div id="2Stat" *ngIf="inputCtrlList.length > 0">
+    
+    <div class="light-clear"></div>
+    <div class="light-control-content">
+      <ul>
+        <app-input-control *ngFor="let ctrlInfo of inputCtrlList"
+                       [inputController]="ctrlInfo.controller"
+                       [ampSensors]="ctrlInfo.ampereSensor"
+        ></app-input-control>
+      </ul>
+    </div>
+  </div>
 </div>

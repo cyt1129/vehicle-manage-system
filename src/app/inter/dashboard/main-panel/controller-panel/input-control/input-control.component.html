@@ -1,0 +1,22 @@
+<li>
+  <!--头-->
+  <div class="control-name-purple">
+    {{inputController.name}}  
+  </div>
+  <div class="control-panel">
+    <!--显示时间和状态-->
+    <label>
+      当前上报时间间隔:{{rate.value}}
+        <input class="input" type="text" [formControl]="rate">
+    </label>
+    <p>{{attention}}</p>
+    
+    <button (click)="sendCmd(rate.value)">确认更改</button>
+
+    
+    <!--指示灯-->
+    
+    <!--显示电流大小-->
+    
+  </div>
+</li>

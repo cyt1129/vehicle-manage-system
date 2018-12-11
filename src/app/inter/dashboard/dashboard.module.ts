@@ -7,7 +7,7 @@ import {HeaderComponent} from "./header/header.component";
 import {UserService} from "../../user/login/service/user.service";
 import {RegionPanelComponent} from "./region-panel/region-panel.component";
 import {AlarmPanelComponent} from "./alarm-panel/alarm-panel.component";
-import {HistoryPanelComponent} from "./history-panel/history-panel.component";
+//import {HistoryPanelComponent} from "./history-panel/history-panel.component";
 import {MainPanelModule} from "./main-panel/main-panel.module";
 import {MainPanelComponent} from "./main-panel/main-panel.component";
 import {WebsocketService} from "./websocket.service";
@@ -43,7 +43,7 @@ import { ObdComponent } from './obdindb/obd/obd.component';
     HeaderComponent,
     RegionPanelComponent,
     AlarmPanelComponent,
-    HistoryPanelComponent,
+    //HistoryPanelComponent,
     TabControlComponent,
     TimePipePipe,
     GpsPanelComponent,

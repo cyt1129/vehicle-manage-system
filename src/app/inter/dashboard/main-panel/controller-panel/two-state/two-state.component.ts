@@ -103,7 +103,7 @@ export class TwoStateComponent implements OnInit {
       return;
     }
     this.rpcLock = true;
-    let API_URL = `http://${environment.serverUrl}/api/plugins/rpc/twoway/${this.twoStatController.parentInfo.entityId}`;
+    let API_URL = `${environment.serverUrl}/plugins/rpc/twoway/${this.twoStatController.parentInfo.entityId}`;
     console.log("sending RPC via: " + API_URL);
     let method = this.twoStatController.config.control_addr;
     let params = this.twoStatController.config[cmd];

@@ -13,9 +13,10 @@ import { NgZorroAntdModule } from 'ng-zorro-antd';
 // import stock from 'highcharts/modules/stock.src';
 // import more from 'highcharts/highcharts-more.src';
 import { EchartsNg2Module } from 'echarts-ng2';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModel } from '@angular/forms/src/directives/ng_model';
 import { OptionComponent } from './option/option.component';
+import { InputControlComponent } from './controller-panel/input-control/input-control.component';
 // export function highchartsModules() {
 //   return [stock,more];
 // }
@@ -25,7 +26,8 @@ import { OptionComponent } from './option/option.component';
     NgZorroAntdModule,
    // ChartModule,
    EchartsNg2Module,
-   FormsModule
+   FormsModule,
+   ReactiveFormsModule,
   ],
   exports: [
     MainPanelComponent
@@ -39,7 +41,8 @@ import { OptionComponent } from './option/option.component';
     ThreeStateComponent,
     TransformPipe,
     TimePipePipe,
-    OptionComponent
+    OptionComponent,
+    InputControlComponent
   ],
  // providers: [{provide:HIGHCHARTS_MODULES,useFactory:highchartsModules}],
 })

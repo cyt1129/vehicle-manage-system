@@ -136,5 +136,46 @@ export class GpsCoordService {
     //this.GPSList[gpsModel.entityId]=gpsModel;
     return gpsModel;
    
-  }    
+  }
+  /**
+   * 五点平滑算法
+   * @param double 
+   */
+  linearSmooth5 (inP:Array<number>,outP:Array<number>, N:number):void{
+
+    if ( N < 5 ){
+        for ( let i = 0; i <= N - 1; i++ ){
+            outP[i] = inP[i];
+        }
+    }
+    else{
+        outP[0] = ( 3.0 * inP[0] + 2.0 * inP[1] + inP[2] - inP[4] ) / 5.0;
+        outP[1] = ( 4.0 * inP[0] + 3.0 * inP[1] + 2 * inP[2] + inP[3] ) / 10.0;
+        for ( let i = 2; i <= N - 3; i++ )
+        {
+            outP[i] = ( inP[i - 2] + inP[i - 1] + inP[i] + inP[i + 1] + inP[i + 2] ) / 5.0;
+        }
+        outP[N - 2] = ( 4.0 * inP[N - 1] + 3.0 * inP[N - 2] + 2 * inP[N - 3] + inP[N - 4] ) / 10.0;
+        outP[N - 1] = ( 3.0 * inP[N - 1] + 2.0 * inP[N - 2] + inP[N - 3] - inP[N - 5] ) / 5.0;
+    }
+}
+/**
+ * 五点平滑算法
+ * @param m 
+ */
+smooth5(m:Marker[]):void{
+  var l = m.length;
+  if(m.length < 5){
+    //return m;
+  }else{
+    m[0].point.lat = (3.0 * m[0].point.lat + 2*m[1].point.lat + m[2].point.lat - m[4].point.lat)/5;
+    m[1].point.lat = ( 4 * m[0].point.lat + 3 * m[1].point.lat + 2 * m[2].point.lat + m[3].point.lat)/10;
+    for(let i = 2;i<l - 3;i++){
+      m[i].point.lat = ( m[i-2].point.lat + m[i-1].point.lat+m[i].point.lat + m[i+1].point.lat + m[i+2].point.lat)/5;//没写完
+    }
+    m[l-2].point.lat=( 4 * m[l-1].point.lat + 3 * m[l-2].point.lat + 2 * m[l-3].point.lat + m[l-4].point.lat)/10;
+    m[l-1].point.lat = ( 3 * m[l-1].point.lat + 2 * m[l-2].point.lat + m[l-3].point.lat - m[l-5].point.lat)/5;
+  }
+}
+  
 }

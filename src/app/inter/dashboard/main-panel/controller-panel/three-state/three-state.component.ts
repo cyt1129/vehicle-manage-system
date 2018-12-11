@@ -132,7 +132,7 @@ export class ThreeStateComponent implements OnInit {
     }
 
     this.rpcLock = true;
-    let API_URL = `http://${environment.serverUrl}/api/plugins/rpc/twoway/${this.threeStatController.parentInfo.entityId}`;
+    let API_URL = `${environment.serverUrl}/plugins/rpc/twoway/${this.threeStatController.parentInfo.entityId}`;
     console.log("sending RPC via: " + API_URL);
     let method = this.threeStatController.config.control_addr;
     let params = this.threeStatController.config[cmd];

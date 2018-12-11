@@ -156,13 +156,15 @@ export class GpsPanelComponent implements OnInit {
       }else if(msg.name == `!${this.gps.key}@${this.gps.parentInfo.entityId}`){
         //历史数据
         this.historyData = msg.data;
+        console.log(msg.data);
         for(var tmp in msg.data){
           this.historyMarkers[tmp] = this._gpsCoordService.handleGPSRawdata(msg.data[tmp][1]);
           this.historyMarkers[tmp].time = msg.data[tmp][0];
           this.points.push(this.historyMarkers[tmp].point);
         }
+        //this._gpsCoordService.smooth5(this.historyMarkers);
         console.log(this.historyMarkers);
-        console.log(this.points);
+        //console.log(this.points);
         this.isHistory = true;//当所有异步进程加载完以后再渲染polyline
       }
       /*this.OBDsensors.forEach((sensor)=>{
