@@ -103,25 +103,36 @@ export class GpsCoordService {
 
     //let data="$GNRMC,070203.000,A,3015.8482,N,12007.0309,E,0.00,0.00,310718,,,A*75";
     //         "$GNRMC,091242.000,A,30158866,N,12007.0416,E,0.00,330.70,191018,,,A*7B↵"
+    //来自obd的gps数据 "OBDGPS,120.000000,30.000000,60,";
     let m = new Marker();
     let strArray = data.split(",");
     //console.log(strArray);
-    let y = parseFloat(strArray[5]);//原始经度
-    let x = parseFloat(strArray[3]);//原始纬度
-    let y_z = parseInt((y/100).toString());//取经度整数部分
-    let x_z = parseInt((x/100).toString());//取维度整数部分
-    x = (x-x_z*100)/60+x_z;
-    y = (y-y_z*100)/60+y_z;
-    let p:Point;
-    p = this.gps84_To_Bd09(x,y);
-    m.point = p;
+    if(strArray[0] == '$GNRMC'|| strArray[0] == '$GNRMC'){
+      let y = parseFloat(strArray[5]);//原始经度
+      let x = parseFloat(strArray[3]);//原始纬度
+      let y_z = parseInt((y/100).toString());//取经度整数部分
+      let x_z = parseInt((x/100).toString());//取维度整数部分
+      x = (x-x_z*100)/60+x_z;
+      y = (y-y_z*100)/60+y_z;
+      let p:Point;
+      p = this.gps84_To_Bd09(x,y);
+      m.point = p;
 
-    //转换地面速率
-    m.speed = this.knots_To_km(strArray[7]);
-    //转换方向
-    m.direction = this.findDirection(strArray[8]);
-    //console.log(p);
-    //marker.lat=30;
+      //转换地面速率
+      m.speed = this.knots_To_km(strArray[7]);
+      //转换方向
+      m.direction = this.findDirection(strArray[8]);
+      //console.log(p);
+      //marker.lat=30;
+    }else if(strArray[0] == 'OBDGPS'){
+      m.point = {
+        lng:parseInt(strArray[1]),
+        lat:parseInt(strArray[2])
+      };
+      m.speed = strArray[3] + 'km/h';
+      m.direction = strArray[4];
+    }
+    
     return m;
   }
 
