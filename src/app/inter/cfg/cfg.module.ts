@@ -9,6 +9,8 @@ import {DeviceAttrListComponent} from "./attrlist-panel/device-attr-list.compone
 import {UserService} from "../../user/login/service/user.service";
 import { FormsModule } from '@angular/forms';
 import {JsonpModule} from '@angular/http';
+import { DeviceRegisterComponent } from './device-register/device-register.component';
+import { VehicleTpyeComponent } from './vehicle-tpye/vehicle-tpye.component';
 
 @NgModule({
   imports: [
@@ -23,6 +25,8 @@ import {JsonpModule} from '@angular/http';
     CfgComponent,
     DevicesComponent,
     DeviceAttrListComponent,
+    DeviceRegisterComponent,
+    VehicleTpyeComponent,
   ],
   providers: [UserService,DeviceAttrListComponent]
 })

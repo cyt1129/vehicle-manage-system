@@ -1,0 +1,94 @@
+export class SubmittedFormOption {
+      DOCXH:string;
+      DOCSCC:string;
+      SCRXH:string;
+      SCRSCC:string;
+      DPFXH:string;
+      DPFSCC:string;
+      POCXH:string;
+      POCSCC:string;
+      PYBXH:string;
+      PYBSCC:string;
+      ZYQXH:string;
+      ZYQSCC:string;
+      PYQXH:string;
+      PYQSCC:string;
+      ECUXH:string;
+      ECUBBH:string;
+      ECUSCC:string;
+      OBDXH:string;
+      OBDSCC:string;
+      EGRXH:string;
+      EGRSCC:string;
+      ZLQXS:string;
+      BSQXS:string;
+      DWS:string;
+      XSQXH:string;
+      XSQSCC:string;
+      ZHQXH:string;
+      ZHQSCC:string;
+      KLBJQXH:string;
+      KLBJQSCC:string;
+      FDJGL:string;
+      FDJGLZS:string;
+      ZDNJ:string;
+      ZDNJZS:string;
+      GYXTXS:string;
+      QTXTXH:string;
+      PQHCLXS:string;
+      KQLQQXH:string;
+      KQLQQSCC:string;
+      JQXSQXH:string;
+      JQXSQSCC:string;
+      PQXSQXH:string;
+      PQXSQSCC:string;
+
+
+      constructor(){
+        this.DOCXH = "";
+        this.DOCSCC = "";
+        this.SCRXH = "";
+        this.SCRSCC = "";
+        this.DPFXH = "";
+        this.DPFSCC = "";
+        this.POCXH = "";
+        this.POCSCC = "";
+        this.PYBXH = "";
+        this.PYBSCC = "";
+        this.ZYQXH = "";
+        this.ZYQSCC = "";
+        this.PYQXH = "";
+        this.PYQSCC = "";
+        this.ECUXH = "";
+        this.ECUBBH = "";
+        this.ECUSCC = "";
+        this.OBDXH = "";
+        this.OBDSCC = "";
+        this.EGRXH = "";
+        this.EGRSCC = "";
+        this.ZLQXS = "";
+        this.BSQXS = "";
+        this.DWS = "";
+        this.XSQXH = "";
+        this.XSQSCC = "";
+        this.ZHQXH = "";
+        this.ZHQSCC = "";
+        this.KLBJQXH = "";
+        this.KLBJQSCC = "";
+        this.FDJGL = "";
+        this.FDJGLZS = "";
+        this.ZDNJ = "";
+        this.ZDNJZS = "";
+        this.GYXTXS = "";
+        this.QTXTXH = "";
+        this.PQHCLXS = "";
+        this.KQLQQXH = "";
+        this.KQLQQSCC = "";
+        this.JQXSQXH = "";
+        this.JQXSQSCC = "";
+        this.PQXSQXH = "";
+        this.PQXSQSCC = "";
+      }
+
+
+  }

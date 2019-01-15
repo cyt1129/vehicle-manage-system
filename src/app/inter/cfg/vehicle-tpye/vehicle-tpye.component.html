@@ -1,0 +1,327 @@
+<div class="form">
+    <div class="queryclxh">
+      <form #typeQueryForm= "ngForm">
+          <div id="typeQueryForm-title">
+              查询车辆型号
+          </div>
+          <div>请输入车辆型号:
+              <input ngModel type="text" name="type"/>
+              <input id="queryclxhbuttom" type="button" value="查询车辆型号" (click)="findType(typeQueryForm.value)"/>
+              <p>{{queryTypeResult}}</p>
+          </div>
+      </form>
+    </div>
+    <hr>
+    <div class="list">
+      <div class="inform">
+        <span class="star">*</span>请按照<span>车辆随车环保信息清单</span>与<span>车辆合格证</span>正确填写，DOC、SCR、DPF、POC四类至少填写一类
+      </div>
+      <form #myForm = "ngForm" >
+       <div class="body">
+        <div class="required">
+          <div class="a">车辆型号（必填）:
+              <input [(ngModel)]="form.CLXH" type="text" name="CLXH" placeholder="必填"/><span class="star">*</span>
+           </div>
+           <div class="a">车辆品牌（必填）:
+              <input [(ngModel)]="form.CLPP" type="text" name="CLPP" placeholder="必填"/><span class="star">*</span>
+           </div>
+           <div class="a">发动机型号（必填）:
+              <input [(ngModel)]="form.FDJXH" type="text" name="FDJXH" placeholder="必填"/><span class="star">*</span>
+           </div>
+           <div class="a">燃料种类（必填）:
+              <input [(ngModel)]="form.RLZL" type="text" name="RLZL" placeholder="必填"/><span class="star">*</span>
+           </div>
+           <div class="a">车辆类型:
+              <input [(ngModel)]="form.CLLX" type="text" name="CLLX"/>
+           </div>
+           <div class="a">汽车分类:
+              <input [(ngModel)]="form.QCFL" type="text" name="QCFL"/>
+           </div>
+           <div class="a">排放阶段（必填）:
+              <input [(ngModel)]="form.PF" type="text" name="PF" placeholder="必填"/><span class="star">*</span>
+           </div>
+           <div class="a">车辆制造商名称（必填）:
+              <input [(ngModel)]="form.SCQYMC" type="text" name="SCQYMC" placeholder="必填"/><span class="star">*</span>
+           </div>
+           <div class="a">发动机生产厂（必填）:
+              <input [(ngModel)]="form.FDJSCC" type="text" name="FDJSCC" placeholder="必填"/><span class="star">*</span>
+           </div>
+           <div class="a">IUPR:
+              <input [(ngModel)]="form.IUPR" type="text" name="IUPR"/>
+           </div>
+        </div>
+  
+        <div class = "optional" ngModelGroup="optional">
+          <div class="q-a">
+            <div class="a">
+              <div class="tagname">DOC型号:</div>
+              <div class="blank">
+                <input [(ngModel)]="form.optional.DOCXH" type="text" name="DOCXH"/>
+              </div>
+            </div>
+            <div class="a">
+              <div class="tagname">DOC生产厂:</div>
+              <div class="blank">
+                <input [(ngModel)]="form.optional.DOCSCC" type="text" name="DOCSCC"/>
+              </div>
+            </div>
+            <div class="a">
+              <div class="tagname">SCR型号:</div>
+              <div class="blank">
+                <input [(ngModel)]="form.optional.SCRXH" type="text" name="SCRXH"/>
+              </div>
+            </div>
+            <div class="a">
+              <div class="tagname">SCR生产厂:</div>
+              <div class="blank">
+                <input [(ngModel)]="form.optional.SCRSCC" type="text" name="SCRSCC"/>
+              </div>
+            </div>
+            <div class="a">
+              <div class="tagname">DPF型号:</div>
+              <div class="blank">
+                <input [(ngModel)]="form.optional.DPFXH" type="text" name="DPFXH"/>
+              </div>
+            </div>
+            <div class="a">
+              <div class="tagname">DPF生产厂:</div>
+              <div class="blank">
+                <input [(ngModel)]="form.optional.DPFSCC" type="text" name="DPFSCC"/>
+              </div>
+            </div>
+            <div class="a">
+              <div class="tagname">POC型号:</div>
+              <div class="blank">
+                <input [(ngModel)]="form.optional.POCXH" type="text" name="POCXH"/>
+              </div>
+            </div>
+            <div class="a">
+              <div class="tagname">POC生产厂:</div>
+              <div class="blank">
+                <input [(ngModel)]="form.optional.POCSCC" type="text" name="POCSCC"/>
+              </div>
+            </div>
+            <div class="a">
+              <div class="tagname">喷油泵型号:</div>
+              <div class="blank">
+                <input [(ngModel)]="form.optional.PYBXH" type="text" name="PYBXH"/>
+              </div>
+            </div>
+            <div class="a">
+              <div class="tagname">喷油泵生产厂:</div>
+              <div class="blank">
+                <input [(ngModel)]="form.optional.PYBSCC" type="text" name="PYBSCC"/>
+              </div>
+            </div>
+            <div class="a">
+              <div class="tagname">增压器型号:</div>
+              <div class="blank">
+                <input [(ngModel)]="form.optional.ZYQXH" type="text" name="ZYQXH"/>
+              </div>
+            </div>
+            <div class="a">
+              <div class="tagname">增压器生产厂:</div>
+              <div class="blank">
+                <input [(ngModel)]="form.optional.ZYQSCC" type="text" name="ZYQSCC"/>
+              </div>
+            </div>
+            <div class="a">
+              <div class="tagname">喷油器型号:</div>
+              <div class="blank">
+                <input [(ngModel)]="form.optional.PYQXH" type="text" name="PYQXH"/>
+              </div>
+            </div>
+            <div class="a">
+              <div class="tagname">喷油器生产厂:</div>
+              <div class="blank">
+                <input [(ngModel)]="form.optional.PYQSCC" type="text" name="PYQSCC"/>
+              </div>
+            </div>
+            <div class="a">
+              <div class="tagname">ECU型号:</div>
+              <div class="blank">
+                <input [(ngModel)]="form.optional.ECUXH" type="text" name="ECUXH"/>
+              </div>
+            </div>
+            <div class="a">
+              <div class="tagname">ECU版本号:</div>
+              <div class="blank">
+                <input [(ngModel)]="form.optional.ECUBBH" type="text" name="ECUBBH"/>
+              </div>
+            </div>
+            <div class="a">
+              <div class="tagname">ECU生产厂:</div>
+              <div class="blank">
+                <input [(ngModel)]="form.optional.ECUSCC" type="text" name="ECUSCC"/>
+              </div>
+            </div>
+            <div class="a">
+              <div class="tagname">OBD型号:</div>
+              <div class="blank">
+                <input [(ngModel)]="form.optional.OBDXH" type="text" name="OBDXH"/>
+              </div>
+            </div>
+            <div class="a">
+              <div class="tagname">OBD生产厂:</div>
+              <div class="blank">
+                <input [(ngModel)]="form.optional.OBDSCC" type="text" name="OBDSCC"/>
+              </div>
+            </div>
+            <div class="a">
+              <div class="tagname">EGR型号:</div>
+              <div class="blank">
+                <input [(ngModel)]="form.optional.EGRXH" type="text" name="EGRXH"/>
+              </div>
+            </div>
+            <div class="a">
+              <div class="tagname">EGR生产厂:</div>
+              <div class="blank">
+                <input [(ngModel)]="form.optional.EGRSCC" type="text" name="EGRSCC"/>
+              </div>
+            </div>
+            <div class="a">
+              <div class="tagname">中冷器型式:</div>
+              <div class="blank">
+                <input [(ngModel)]="form.optional.ZLQXS" type="text" name="ZLQXS"/>
+              </div>
+            </div>
+          </div>
+          <div class="q-c">
+              <div class="c">
+                <div class="tagname">变速器型式:</div>
+                <div class="blank">
+                  <input [(ngModel)]="form.optional.BSQXS" type="text" name="BSQXS"/>
+                </div>
+              </div>
+              <div class="c">
+                <div class="tagname">档位数:</div>
+                <div class="blank">
+                  <input [(ngModel)]="form.optional.DWS" type="text" name="DWS"/>
+                </div>
+              </div>
+              <div class="c">
+                <div class="tagname">消声器型号:</div>
+                <div class="blank">
+                  <input [(ngModel)]="form.optional.XSQXH" type="text" name="XSQXH"/>
+                </div>
+              </div>
+              <div class="c">
+                <div class="tagname">消声器生产厂:</div>
+                <div class="blank">
+                  <input [(ngModel)]="form.optional.XSQSCC" type="text" name="XSQSCC"/>
+                </div>
+              </div>
+              <div class="c">
+                <div class="tagname">催化转化器型号:</div>
+                <div class="blank">
+                  <input [(ngModel)]="form.optional.ZHQXH" type="text" name="ZHQXH"/>
+                </div>
+              </div>
+              <div class="c">
+                  <div class="tagname">催化转化器生产厂:</div>
+                  <div class="blank">
+                    <input [(ngModel)]="form.optional.ZHQSCC" type="text" name="ZHQSCC"/>
+                  </div>
+              </div>
+              <div class="c">
+                  <div class="tagname">颗粒捕集器型号:</div>
+                  <div class="blank">
+                    <input [(ngModel)]="form.optional.KLBJQXH" type="text" name="KLBJQXH"/>
+                  </div>
+              </div>
+              <div class="c">
+                  <div class="tagname">颗粒捕集器生产厂:</div>
+                  <div class="blank">
+                    <input [(ngModel)]="form.optional.KLBJQSCC" type="text" name="KLBJQSCC"/>
+                  </div>
+                </div>
+              <div class="c">
+                  <div class="tagname">最大净功率:</div>
+                  <div class="blank">
+                    <input [(ngModel)]="form.optional.FDJGL" type="text" name="FDJGL" placeholder="不要带单位"/>
+                  </div>
+              </div>
+              <div class="c">
+                  <div class="tagname">最大净功率转速:</div>
+                  <div class="blank">
+                    <input [(ngModel)]="form.optional.FDJGLZS" type="text" name="FDJGLZS" placeholder="不要带单位"/>
+                  </div>
+              </div>
+              <div class="c">
+                  <div class="tagname">最大净扭矩:</div>
+                  <div class="blank">
+                    <input [(ngModel)]="form.optional.ZDNJ" type="text" name="ZDNJ" placeholder="不要带单位"/>
+                  </div>
+              </div>
+              <div class="c">
+                  <div class="tagname">最大净扭矩转速:</div>
+                  <div class="blank">
+                    <input [(ngModel)]="form.optional.ZDNJZS" type="text" name="ZDNJZS" placeholder="不要带单位"/>
+                  </div>
+              </div>
+              <div class="c">
+                  <div class="tagname">燃料供给系统型式:</div>
+                  <div class="blank">
+                    <input [(ngModel)]="form.optional.GYXTXS" type="text" name="GYXTXS"/>
+                  </div>
+              </div>
+              <div class="c">
+                  <div class="tagname">其他系统型号:</div>
+                  <div class="blank">
+                    <input [(ngModel)]="form.optional.QTXTXH" type="text" name="QTXTXH"/>
+                  </div>
+              </div>
+              <div class="c">
+                  <div class="tagname">排气后处理系统型式:</div>
+                  <div class="blank">
+                    <input [(ngModel)]="form.optional.PQHCLXS" type="text" name="PQHCLXS"/>
+                  </div>
+                </div>
+              <div class="c">
+                  <div class="tagname">空气滤清器型号:</div>
+                  <div class="blank">
+                    <input [(ngModel)]="form.optional.KQLQQXH" type="text" name="KQLQQXH"/>
+                  </div>
+              </div>
+              <div class="c">
+                  <div class="tagname">空气滤清器生产厂:</div>
+                  <div class="blank">
+                    <input [(ngModel)]="form.optional.KQLQQSCC" type="text" name="KQLQQSCC"/>
+                  </div>
+              </div>
+              <div class="c">
+                  <div class="tagname">进气消声器型号:</div>
+                  <div class="blank">
+                    <input [(ngModel)]="form.optional.JQXSQXH" type="text" name="JQXSQXH"/>
+                  </div>
+              </div>
+              <div class="c">
+                  <div class="tagname">进气消声器生产厂:</div>
+                  <div class="blank">
+                    <input [(ngModel)]="form.optional.JQXSQSCC" type="text" name="JQXSQSCC"/>
+                  </div>
+              </div>
+              <div class="c">
+                  <div class="tagname">排气消声器型号:</div>
+                  <div class="blank">
+                    <input [(ngModel)]="form.optional.PQXSQXH" type="text" name="PQXSQXH"/>
+                  </div>
+              </div>
+              <div class="c">
+                  <div class="tagname">排气消声器生产厂:</div>
+                  <div class="blank">
+                    <input [(ngModel)]="form.optional.PQXSQSCC" type="text" name="PQXSQSCC"/>
+                  </div>
+              </div>
+        </div>
+        </div>
+        </div>
+        <div class="submit">
+          <input type="button" value="提 交" (click)="addVehicleType(myForm.value)"/>
+        </div>  
+        </form>
+        <div class="result">
+            <!--<div class="message" >{{str}}</div>-->
+        </div>
+      </div>
+  </div>

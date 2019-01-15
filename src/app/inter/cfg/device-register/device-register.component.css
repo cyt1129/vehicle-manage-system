@@ -1,0 +1,126 @@
+.header{
+    width:50px;
+    font:20px
+}
+.a{
+    display: block;
+    margin-top:10px;
+    font:14px white;
+    height: 20px;
+}
+
+.form{
+    background: #d9dee2;
+    height: 950px;
+}
+input{
+    font-size: 12px;
+    height: 26px;
+    width:200px;
+}
+.submit input{
+    width: 100px;
+    height: 30px;
+    border-radius: 5px;
+    margin: 10px;
+    background-color: #b5d84a;
+    font-size: 14px;
+}
+
+.result{
+    height: 60px;
+}
+.required{
+    display: block;
+    float: left;
+    margin:0px 50px 0px 50px;
+}
+
+.optional{
+    display: block;
+    float: left;
+    margin:0px 50px 0px 50px;
+}
+
+.tagname{
+    display: block;
+    float: left;
+    width: 95px;
+    padding:3px;
+}
+.blank{
+    display: block;
+    float: left;
+}
+
+.q-c{
+    float: left;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.q-a{
+    float: left;
+    margin-right: 10px;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.c .tagname{
+    width: 136px;
+}
+.c{
+    display: block;
+    margin-top:10px;
+    font:14px white;
+    height: 20px;
+}
+
+.submit{
+    float: left;
+    margin-left: 590px;
+}
+
+
+.body{
+    height: 700px;
+}
+
+.star{
+    margin-left: 5px;
+    color: red;
+}
+
+.queryclxh{
+    margin-left: 50px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    font-size: 16px;
+}
+#queryclxhbuttom{
+    width: 130px;
+    height: 25px;
+    border-radius: 5px;
+    margin: 10px;
+    background-color: #b5d84a;
+    font-size: 14px;
+}
+
+hr{
+    size:3
+}
+
+#typeQueryForm-title{
+    font:red;
+}
+p{
+    background: yellow;
+    width: 250px;
+    text-align: center;
+}
+.inform{
+    margin-left: 50px;
+    font-size: 14px;
+    margin-top: 20px;
+}

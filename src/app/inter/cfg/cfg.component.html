@@ -1,10 +1,17 @@
 <div class="cfg-body">
   <div class="light-bg">
-
+     <!-- <dashboard-header></dashboard-header>-->
     <div class="main">
-          <devices-list></devices-list>
-          <device-attr-list></device-attr-list>
+      <div (click)="setFormType('auth')" [ngClass]="isActive('auth')">
+        <p>车辆鉴权</p>
+      </div>
+      <div (click)="setFormType('addType')" [ngClass]="isActive('addType')">
+        <p>添加车辆型号</p>
+      </div>
+          <!--<devices-list></devices-list>-->
+          <!--<device-attr-list></device-attr-list>-->
+      <app-device-register *ngIf="deviceRegister"></app-device-register>
+      <app-vehicle-tpye *ngIf="deviceTypeAdd"></app-vehicle-tpye>
     </div>
-
   </div>
-</div>
+</div> 

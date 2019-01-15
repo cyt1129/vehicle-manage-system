@@ -24,19 +24,45 @@ export class CfgComponent implements OnInit {
     });
 
     this.getUserDevices();
+    this.deviceRegister = true;
+    this.deviceTypeAdd =false;
 
   }
+
+  private deviceRegister:boolean
+  private deviceTypeAdd:boolean
 
   getUserDevices(): Subject<Device> {
      this.http.get(`${environment.serverUrl}/customer/`+localStorage.getItem("userid")+`/devices?limit=50`,this.httpOption)
     .toPromise().then(response => {
         let devices = response.json().data;
-        //console.log(devices);
         for(let tmp in devices){
-          console.log(devices[tmp].name);
+          // console.log(devices[tmp].name);
         }
       });
     return null;
+  }
+
+
+  setFormType(value:string){
+    if(value == "auth"){
+      this.deviceRegister = true;
+      this.deviceTypeAdd = false;
+    }else{
+      this.deviceRegister = false;
+      this.deviceTypeAdd = true;
+    }
+  }
+
+  isActive(value:string){
+    switch(value){
+      case "auth":
+         return this.deviceRegister?"on":"off";
+      default:
+         return this.deviceTypeAdd?"on":"off";
+    }
+
+
   }
 
   ngOnInit() {

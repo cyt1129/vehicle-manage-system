@@ -20,7 +20,7 @@ ul,p{
 .light-bg {
     width: 100%;
     min-width: 1280px;
-    margin-top:8px;
+    margin-top:30px;
 }
 
 .light-header {
@@ -1012,4 +1012,31 @@ select::-ms-expand { display: none; }
 }
 .addcontent p {
     height: 40px;
+}
+
+.off{
+    width: 120px;
+    height: 38px;
+    background-color: rgb(141, 141, 20);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+}
+.main p{
+    margin-top:0px;
+    margin-left: 0px;
+    text-align: center;
+}
+
+.on{
+    width: 120px;
+    height: 38px;
+    background-color: yellow;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
 }
