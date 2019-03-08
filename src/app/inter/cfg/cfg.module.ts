@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 import {JsonpModule} from '@angular/http';
 import { DeviceRegisterComponent } from './device-register/device-register.component';
 import { VehicleTpyeComponent } from './vehicle-tpye/vehicle-tpye.component';
+import { VehicleService } from './vehicle.service';
 
 @NgModule({
   imports: [
@@ -28,7 +29,7 @@ import { VehicleTpyeComponent } from './vehicle-tpye/vehicle-tpye.component';
     DeviceRegisterComponent,
     VehicleTpyeComponent,
   ],
-  providers: [UserService,DeviceAttrListComponent]
+  providers: [UserService,DeviceAttrListComponent,VehicleService]
 })
 export class CfgModule {
 }

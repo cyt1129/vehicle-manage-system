@@ -51,6 +51,7 @@ export class UserService {
     //auth/user得到用户信息
     this.http.get(this.authUserUrl, this.httpOption).toPromise()
       .then(response => {
+        console.log(this.httpOption);
         let auth_user = response.json();
        
         let user = new User();

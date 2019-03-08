@@ -27,18 +27,18 @@ export class AlarmPanelComponent implements OnInit {
     //    });
     
    
-            this._alarmService.getAlarmInfo()
-               .subscribe(alarm => {
-                 console.log(alarm);
-                 this.dataSet.push(
-                     {
-                       time   :alarm.startTs,
-                      status  :alarm.status,
-                      type    :alarm.type,
-                      device  :alarm.device,
-                    }); 
+    //        this._alarmService.getAlarmInfo()
+    //           .subscribe(alarm => {
+    //             console.log(alarm);
+    //             this.dataSet.push(
+    //                 {
+    //                   time   :alarm.startTs,
+    //                  status  :alarm.status,
+    //                  type    :alarm.type,
+    //                  device  :alarm.device,
+     //               }); 
                 
-                 });
+    //             });
     //this.queryAlarmMsg()
          
   }

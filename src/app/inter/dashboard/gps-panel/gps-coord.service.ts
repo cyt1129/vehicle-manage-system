@@ -103,7 +103,7 @@ export class GpsCoordService {
 
     //let data="$GNRMC,070203.000,A,3015.8482,N,12007.0309,E,0.00,0.00,310718,,,A*75";
     //         "$GNRMC,091242.000,A,30158866,N,12007.0416,E,0.00,330.70,191018,,,A*7B↵"
-    //来自obd的gps数据 "OBDGPS,120.000000,30.000000,60,";
+    //来自obd的gps数据 "OBDGPS,1,120.000000,30.000000,60,120";
     let m = new Marker();
     let strArray = data.split(",");
     //console.log(strArray);
@@ -124,13 +124,13 @@ export class GpsCoordService {
       m.direction = this.findDirection(strArray[8]);
       //console.log(p);
       //marker.lat=30;
-    }else if(strArray[0] == 'OBDGPS'){
+    }else if(strArray[0] == 'OBDGPS' && strArray[1] == '1'){
       m.point = {
-        lng:parseInt(strArray[1]),
-        lat:parseInt(strArray[2])
+        lng:parseInt(strArray[2]),
+        lat:parseInt(strArray[3])
       };
-      m.speed = strArray[3] + 'km/h';
-      m.direction = strArray[4];
+      m.speed = strArray[4] + 'km/h';
+      m.direction = strArray[5];
     }
     
     return m;

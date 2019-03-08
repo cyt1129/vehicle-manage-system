@@ -8,6 +8,8 @@ export const environment = {
 
   // serverUrl: "192.168.66.165:8080",
   //  serverUrl: "106.14.114.91:8080",
-   serverUrl: 'http://140.143.23.199:8080/api',
+  //serverUrl: 'http://140.143.23.199:8080/api',
+  serverUrl: 'http://129.211.96.209:8080/api',
+  obd_serverUrl:'http://129.211.96.209:8090/obd',
   tokenExpireTime: 1500
 };

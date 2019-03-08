@@ -94,9 +94,11 @@ input{
 
 .queryclxh{
     margin-left: 50px;
+    margin-right: 50px;
     padding-top: 25px;
     padding-bottom: 25px;
     font-size: 16px;
+    float: left;
 }
 #queryclxhbuttom{
     width: 130px;
@@ -111,7 +113,7 @@ hr{
     size:3
 }
 
-#typeQueryForm-title{
+.typeQueryForm-title{
     font:red;
 }
 p{
@@ -123,4 +125,8 @@ p{
     margin-left: 50px;
     font-size: 14px;
     margin-top: 20px;
+}
+
+.head{
+    height:120px;
 }

@@ -34,7 +34,7 @@ export class WebsocketService {
     let token = localStorage.getItem("token");
     // console.log("using token: " + token);
     //let websocketUrl = `ws://${environment.serverUrl}/api/ws/plugins/telemetry?token=` + token;
-    let websocketUrl = `ws://140.143.23.199:8080/api/ws/plugins/telemetry?token=` + token;
+    let websocketUrl = `ws://129.211.96.209:8080/api/ws/plugins/telemetry?token=` + token;
     console.log("connecting to: " + websocketUrl);
     this.webSocketSubject = Observable.webSocket(websocketUrl);
 
